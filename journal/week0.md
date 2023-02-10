@@ -15,18 +15,18 @@
 **Setup**
 - [X] GitHub Account
      - [X] add to student portal
+- [X] Create repo from bootcamp template
+    - [X] add to student portal
 - [X] AWS Account
     - [X] add to student portal
 - [ ] Create Custom Domain Name
     - [ ] add to student portal
-- [X] Create repo from bootcamp template
-    - [X] add to student portal
-- [ ] Gitpod Account
-- [ ] GitHub Codespaces
-- [ ] Lucid Chart
+- [X] Gitpod Account
+- [X] GitHub Codespaces
+- [X] Lucid Chart
 - [ ] Momento Account
-- [ ] HoneyComb.io Acount
-- [ ] Rollbar Account
+- [X] HoneyComb.io Acount
+- [X] Rollbar Account
 
 **Prerequestite Knowledge**
 - [X] Python 3
@@ -40,7 +40,7 @@
 <!--Summary Journal Entry-->
 - Read outline
 - Organized course on Notion for tracking
-- Completed various items in tasks list (see above)
+- Completed various items in task list (see above)
 
 #### Reflection
 <!--Thoughts/Feelings so far.-->
