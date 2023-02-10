@@ -4,10 +4,10 @@
 <!--Fill in Task List-->
 
 **Setup**
-- [ ] AWS Account
+- [X] GitHub Account
+- [X] AWS Account
 - [ ] Gitpod Account
 - [ ] GitHub Codespaces
-- [ ] GitHub Account
 - [ ] Custom Domain Name
 - [ ] Lucid Chart
 - [ ] Momento Account
@@ -15,9 +15,9 @@
 - [ ] Rollbar Account
 
 **Prerequestite Knowledge**
-- [ ] Python 3
+- [X] Python 3
 - [ ] JavaScript (ES6)
-- [ ] YAML and JSON
+- [X] YAML and JSON
 - [ ] Cloud
 
 ## Week of 2023-02-06 
