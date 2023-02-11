@@ -1,15 +1,17 @@
 # Week 0 — Billing and Architecture
 
+>__Quick Links__
+> - [Reflection](#reflection)
+> - [Key Takeaways](#key-takeaways)
+> - [Homework](#homework)
 
-### Weekly Outcome
+## Weekly Outcome
 - Gain confidence when working meter-billing with a Cloud Service Provider (CSP)
 - To understand how to build useful architecture diagrams
 - To gain a general idea of the cost of common cloud services
 - To ensure we have a working AWS account
 
----
-
-### Task List
+## Task List
 <!--Fill in Task List-->
 
 **Setup**
@@ -53,6 +55,9 @@ I successfully redeemed the AWS credit voucher from the student portal, so I'm p
 <!-- Challenges you've had this week in completing your tasks. How you might solve them or what you did to solve them. -->
 I was slightly concerned about the spending but the costs were broken down really well in the docs and I also successfully added a prepaid gift card to my AWS account for billing.
 
+#### Next Steps
+TBD
+
 ---
 ## Knowledge Transfer
 
@@ -73,5 +78,4 @@ No questions on the concepts at this time.
 
 ---
 
-### Next Week's Goals
-<!--Items to cover or review for next week-->
+# Homework
