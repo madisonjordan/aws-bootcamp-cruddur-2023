@@ -65,6 +65,7 @@ I was slightly concerned about the spending but the costs were broken down reall
    - have a "common dictionary". see TOGAF and AWS Well-Architectured Tool Framework
    - documentation to be able to communicate key features to laymen
    - architectural diagrams help communicate with almost anyone  
+- Setup billing alarms and budget in AWS
 
 #### Questions
 <!-- Questions on the materials or concepts with their answers, if available.-->
