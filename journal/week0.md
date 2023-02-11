@@ -53,6 +53,19 @@ I successfully redeemed the AWS credit voucher from the student portal, so I'm p
 <!-- Challenges you've had this week in completing your tasks. How you might solve them or what you did to solve them. -->
 I was slightly concerned about the spending but the costs were broken down really well in the docs and I also successfully added a prepaid gift card to my AWS account for billing.
 
+---
+## Knowledge Transfer
+
+#### Key Takeaways
+<!-- Key takeaways for this week -->
+- Understand the business concerns before deciding on technical solutions
+   - requirements, risks, assumptions, constraints
+   - "Iron Triangle" - (pick 2) fast, good, or cheap
+- Be able to communicate across teams and stakeholders
+   - have a "common dictionary". see TOGAF and AWS Well-Architectured Tool Framework
+   - documentation to be able to communicate key features to laymen
+   - architectural diagrams help communicate with almost anyone  
+
 #### Questions
 <!-- Questions on the materials or concepts with their answers, if available.-->
 No questions on the concepts at this time. 
