@@ -4,6 +4,7 @@
 > - [Reflection](#reflection)
 > - [Key Takeaways](#key-takeaways)
 > - [Homework](#homework)
+>    - [Logical Design](#logical-design)
 
 ## Weekly Outcome
 - Gain confidence when working meter-billing with a Cloud Service Provider (CSP)
@@ -55,6 +56,7 @@ I successfully redeemed the AWS credit voucher from the student portal, so I'm p
 <!-- Challenges you've had this week in completing your tasks. How you might solve them or what you did to solve them. -->
 I was slightly concerned about the spending but the costs were broken down really well in the docs and I also successfully added a prepaid gift card to my AWS account for billing.
 
+
 #### Next Steps
 TBD
 
@@ -74,16 +76,16 @@ TBD
 
 #### Questions
 <!-- Questions on the materials or concepts with their answers, if available.-->
-No questions on the concepts at this time. 
+Q. What is the difference between the different archtectural designs? e.g. conceptual, logical, physical
 
 ---
 
 # Homework 
-- [ ] Destroy your root account credentials, Set MFA, IAM role
-- [ ] Set a billing alarm, Set a AWS Budget
-- [ ] Use EventBridge to hookup Health Dashboard to SNS and send notification when there is a service health issue.
-- [ ] Review all the questions of each pillars in the Well Architected Tool (No specialized lens)
-- [ ] Create an architectural diagram (to the best of your ability) the CI/CD logical pipeline in Lucid Charts
-- [ ] Research the technical and service limits of specific services and how they could impact the technical path for technical flexibility. 
-- [ ] Open a support ticket and request a service limit
+
+## Logical Design
+I did the napkin for the wrong one but I spent so long on it that I'm just going to put it here anyway. 
+
+Apparently I don't understand the difference between the conceptual design and logical design otherwise I would have noticed much earlier that the video was for the logical one and the instructions said to do the napkin for the conceptual one. 
+
+![IMG_5780](https://user-images.githubusercontent.com/22087300/218550728-0806473f-b655-4b05-9226-f44c3556adf3.jpg)
 
