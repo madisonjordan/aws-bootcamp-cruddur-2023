@@ -56,6 +56,15 @@ Q. What is the difference between the different archtectural designs? e.g. conce
 
 # Homework 
 
+## Install AWS CLI
+
+I didn't have any issues generating the IAM or access key for AWS and installing the CLI by pasting the tasks into the `gitpod.yml` from the week0 branch instructions, which were very helpful. However, I did have minor issues with pushing the `gitpod.yml`, which I fixed through changing the public repo permissions for the GitHub integration. After that, it gave another error when I pushed my changes (which I don't recall what it said), but I checked my repo on GitHub and it seemed to push fine anyway. When I started it up, it automatically ran all the commands defined in the tasks within the yaml that I had commited.
+
+While I was watching the video I forgot to put the environment variable for the secrets and was stuck for a minute on being able to figure out how to relaunch gitpod since it didn't close the workspace (it complained that the workspace was still open and I didn't want to launch a 2nd one) after I used the `gp env` command and closed the tab. I figured it out from somewhere in the menu where it said "stop workspace." It was fine after that and gave the expected response from the `aws sts get-caller-identity` command. 
+
+<img width="590" alt="Screenshot 2023-02-17 at 8 32 50 PM" src="https://user-images.githubusercontent.com/22087300/219834854-ea7bb764-ea27-4414-bced-c6bb59f2b92a.png">
+
+
 ## Logical Design
 I did the napkin for the wrong one but I spent so long on it that I'm just going to put it here anyway. 
 
