@@ -77,6 +77,12 @@ While I was watching the video I forgot to put the environment variable for the 
 
 <img width="590" alt="Screenshot 2023-02-17 at 8 32 50 PM" src="https://user-images.githubusercontent.com/22087300/219834854-ea7bb764-ea27-4414-bced-c6bb59f2b92a.png">
 
+### Conceptual Design
+
+![cruddur conceptual diagram](/journal/assets/cruddur_conceptual_diagram.svg)
+
+[lucidchart link](https://lucid.app/lucidchart/e62e6674-d758-4eed-a5be-3e7a600d8e61/edit?viewport_loc=-545%2C-100%2C1871%2C800%2C0_0&invitationId=inv_4c1d8683-a850-401f-a5c7-09f72ddaaf50)
+
 
 ### Logical Design
 I did the napkin for the wrong one but I spent so long on it that I'm just going to put it here anyway. 
