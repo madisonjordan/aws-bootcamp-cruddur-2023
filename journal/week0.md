@@ -6,44 +6,18 @@
 > - [Homework](#homework)
 >    - [Logical Design](#logical-design)
 
-## Weekly Outcome
+#### Weekly Outcome
 - Gain confidence when working meter-billing with a Cloud Service Provider (CSP)
 - To understand how to build useful architecture diagrams
 - To gain a general idea of the cost of common cloud services
 - To ensure we have a working AWS account
 
-## Task List
-<!--Fill in Task List-->
-
-**Setup**
-- [X] GitHub Account
-     - [X] add to student portal
-- [X] Create repo from bootcamp template
-    - [X] add to student portal
-- [X] AWS Account
-    - [X] add to student portal
-- [ ] Create Custom Domain Name
-    - [ ] add to student portal
-- [X] Gitpod Account
-- [X] GitHub Codespaces
-- [X] Lucid Chart
-- [ ] Momento Account
-- [X] HoneyComb.io Acount
-- [X] Rollbar Account
-
-**Prerequestite Knowledge**
-- [X] Python 3
-- [ ] JavaScript (ES6)
-- [X] YAML and JSON
-- [ ] Cloud
-
 ---
 
-## Week of 2023-02-06 
+## Weekly Summary
 <!--Summary Journal Entry-->
 - Read outline
 - Organized course on Notion for tracking
-- Completed various items in task list (see above)
 
 #### Reflection
 <!--Thoughts/Feelings so far.-->
@@ -87,5 +61,5 @@ I did the napkin for the wrong one but I spent so long on it that I'm just going
 
 Apparently I don't understand the difference between the conceptual design and logical design otherwise I would have noticed much earlier that the video was for the logical one and the instructions said to do the napkin for the conceptual one. 
 
-![IMG_5780](https://user-images.githubusercontent.com/22087300/218550728-0806473f-b655-4b05-9226-f44c3556adf3.jpg)
+![cruddur logical diagram - napkin](/journal/assets/cruddur_logical_diagram-napkin.jpg)
 
