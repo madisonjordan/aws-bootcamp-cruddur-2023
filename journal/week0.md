@@ -57,6 +57,18 @@ Q. What is the difference between the different archtectural designs? e.g. conce
 
 ## Required Homework 
 
+### Use CloudShell
+
+At first I had trouble figuring out how to find the cloudshell for my region, but then I went back in the video and it said that the console doesn't appear for every region. Apparently us-west-1 doesn't have one, but us-west-2 does. Also I couldn't change the region while I was on the billing page. 
+
+us-west-1:<br>
+<img width="290" alt="AWS us-west-1 screenshot" src="https://user-images.githubusercontent.com/22087300/219837830-6cfedd8c-0c73-44e4-b81b-f686f8fd38b7.png">
+
+us-west-2:<br>
+<img width="290" alt="AWS us-west-2 screenshot" src="https://user-images.githubusercontent.com/22087300/219837720-d2907546-ebcc-492c-b5d0-bfde066ee3ec.png">
+
+
+
 ### Install AWS CLI
 
 I didn't have any issues generating the IAM or access key for AWS and installing the CLI by pasting the tasks into the `gitpod.yml` from the week0 branch instructions, which were very helpful. However, I did have minor issues with pushing the `gitpod.yml`, which I fixed through changing the public repo permissions for the GitHub integration. After that, it gave another error when I pushed my changes (which I don't recall what it said), but I checked my repo on GitHub and it seemed to push fine anyway. When I started it up, it automatically ran all the commands defined in the tasks within the yaml that I had commited.
