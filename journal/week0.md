@@ -4,7 +4,9 @@
 > - [Weekly Summary](#weekly-summary)
 > - [Key Takeaways](#key-takeaways)
 > - [Required Homework](#required-homework)
+>    - [Use Cloudshell](#use-cloudshell)
 >    - [Install AWS CLI](#install-aws-cli)
+>    - [Conceptual Design](#conceptual-design)
 >    - [Logical Design](#logical-design)
 
 #### Weekly Outcome
@@ -51,7 +53,7 @@ TBD
 
 #### Questions
 <!-- Questions on the materials or concepts with their answers, if available.-->
-Q. What is the difference between the different archtectural designs? e.g. conceptual, logical, physical
+Q. What is the difference between the different architectural designs? e.g. conceptual, logical, physical
 
 ---
 
