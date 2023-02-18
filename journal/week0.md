@@ -112,3 +112,7 @@ Apparently I don't understand the difference between the conceptual design and l
 
 ![cruddur logical diagram - napkin](/journal/assets/cruddur_logical_diagram-napkin.jpg)
 
+![cruddur logical diagram](/journal/assets/cruddur_logical_diagram.png)
+
+[lucidchart link](https://lucid.app/lucidchart/2100e5e2-157b-4ccf-a314-8f4d9d5f369c/edit?viewport_loc=228%2C219%2C1579%2C835%2C0_0&invitationId=inv_e5abeba3-1738-4591-bc58-338c71636f34)
+
