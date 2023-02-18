@@ -1,9 +1,10 @@
 # Week 0 — Billing and Architecture
 
 >__Quick Links__
-> - [Reflection](#reflection)
+> - [Weekly Summary](#weekly-summary)
 > - [Key Takeaways](#key-takeaways)
-> - [Homework](#homework)
+> - [Required Homework](#required-homework)
+>    - [Install AWS CLI](#install-aws-cli)
 >    - [Logical Design](#logical-design)
 
 #### Weekly Outcome
@@ -54,7 +55,7 @@ Q. What is the difference between the different archtectural designs? e.g. conce
 
 ---
 
-# Homework 
+# Required Homework 
 
 ## Install AWS CLI
 
