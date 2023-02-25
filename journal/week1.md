@@ -53,3 +53,6 @@ Installed Docker Desktop:
 
 <img width="779" alt="Docker Desktop on Mac" src="https://user-images.githubusercontent.com/22087300/221375115-3eca61fd-262c-4c0c-9efe-b47cf19d5b70.png">
 
+Built Docker Images: 
+
+<img width="1040" alt="Docker Images on Local Machine" src="https://user-images.githubusercontent.com/22087300/221383386-a8d6d071-c15c-40b8-b18c-8c5265b4b91e.png">
