@@ -56,3 +56,20 @@ Installed Docker Desktop:
 Built Docker Images: 
 
 <img width="1040" alt="Docker Images on Local Machine" src="https://user-images.githubusercontent.com/22087300/221383386-a8d6d071-c15c-40b8-b18c-8c5265b4b91e.png">
+
+### Multi-Stage Build
+
+| Image | Original | New | 
+| ------| ---------: | ----: |
+| Frontend |   1.19 GB |   |
+| Backend |    129.48 MB  |     |
+
+### Vulnerability Scanning
+
+| Image | Original | New |
+| --- | ---| ---- |
+|Frontend | <img width="842" alt="Screenshot 2023-02-25 at 3 08 00 PM" src="https://user-images.githubusercontent.com/22087300/221383780-758c2429-8d81-42e1-ad0a-1203206ffd12.png"> | |
+|Backend | <img width="842" alt="Screenshot 2023-02-25 at 3 08 25 PM" src="https://user-images.githubusercontent.com/22087300/221383768-d014f688-a5f0-41d0-8b49-05c0384afbfa.png"> |
+
+
+
