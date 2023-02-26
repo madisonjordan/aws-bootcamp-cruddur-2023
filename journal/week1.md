@@ -67,9 +67,15 @@ docker build -t madisonjordan/crudder-backend:1.0.0 .
 
 I then pushed the built image using the Docker Desktop application while logged in. Used instead of using the CLI commands for `docker login` and `docker push`. 
 
-Dockerhub:
+I just realized I spelled "cruddur" wrong for this version and later had to update the tag. 
 
-<img width="680" alt="Image pushed on Dockerhub" src="https://user-images.githubusercontent.com/22087300/221384977-e7d802c9-d4ca-433e-bf68-9848f4d0304c.png">
+```
+docker tag cruddur-backend:1.0.0 madisonjordan/cruddur-backend:1.0.0 
+```
+
+<img width="877" alt="Correct Dockerhub Image name" src="https://user-images.githubusercontent.com/22087300/221389661-d49a7101-f000-4be5-8285-4513d180af18.png">
+
+
 
 ### Dockerfile Best Practices
 
