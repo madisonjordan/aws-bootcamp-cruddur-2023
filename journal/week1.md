@@ -20,6 +20,7 @@
 
 #### Reflection
 <!--Thoughts/Feelings so far.-->
+ I definitely spent more time on the challenges for Docker than I had hoped to. I should have worked on the required homework more first. 
 
 
 #### Challenges
@@ -66,7 +67,6 @@ docker build -t madisonjordan/crudder-backend:1.0.0 .
 
 I then pushed the built image using the Docker Desktop application while logged in. Used instead of using the CLI commands for `docker login` and `docker push`. 
 
-
 Dockerhub:
 
 <img width="680" alt="Image pushed on Dockerhub" src="https://user-images.githubusercontent.com/22087300/221384977-e7d802c9-d4ca-433e-bf68-9848f4d0304c.png">
@@ -77,8 +77,10 @@ Dockerhub:
 - Reducing vulnerabilities
 - Creating non-root user
 
+Updating for the Dockerfile best practices so I could get the backend image to work while using a small base image with less vulnerabilities was harder than expected. I spent a few hours more than I had hoped to.
+
 References:
-[TestDriven.io - Dockerfile Best Practices ](https://testdriven.io/blog/docker-best-practices/)
+- [TestDriven.io - Dockerfile Best Practices ](https://testdriven.io/blog/docker-best-practices/)
 
 
 #### Multi-Stage Build
@@ -86,7 +88,9 @@ References:
 | Image | Original | New | 
 | ------| ---------: | ----: |
 | Frontend |   1.19 GB |   |
-| Backend |    129.48 MB  |     |
+| Backend |    129.48 MB  |  120.28 MB  |
+
+Not a huge difference in the size of the backend final image when switching to Ubuntu:20.04 as the base image, but it was already pretty small to begin with. 
 
 #### Vulnerability Scanning
 
@@ -97,8 +101,5 @@ docker scan -f Dockerfile cruddur-backend:1.0.0
 
 | Image | Original | New |
 | --- | ---| ---- |
-|Frontend | <img width="842" alt="Screenshot 2023-02-25 at 3 08 00 PM" src="https://user-images.githubusercontent.com/22087300/221383780-758c2429-8d81-42e1-ad0a-1203206ffd12.png"> | |
-|Backend | <img width="842" alt="Screenshot 2023-02-25 at 3 08 25 PM" src="https://user-images.githubusercontent.com/22087300/221383768-d014f688-a5f0-41d0-8b49-05c0384afbfa.png"> |
-
-
-
+|Frontend | <img width="842" alt="Original Frontend Dockerfile" src="https://user-images.githubusercontent.com/22087300/221383780-758c2429-8d81-42e1-ad0a-1203206ffd12.png"> | |
+|Backend | <img width="842" alt="Original Backend Dockerfile" src="https://user-images.githubusercontent.com/22087300/221383768-d014f688-a5f0-41d0-8b49-05c0384afbfa.png"> | <img width="877" alt="Modified Backend Dockerfile" src="https://user-images.githubusercontent.com/22087300/221389059-5f96dbb8-57b1-437e-86d8-ac91d6cb20b9.png">|
