@@ -73,9 +73,9 @@ Dockerhub:
 
 ### Dockerfile Best Practices
 
-- Using multi-stage builds
-- Reducing vulnerabilities
-- Creating non-root user
+- [X] Use multi-stage build
+- [X] Reduce vulnerabilities in built image
+- [X] Create non-root user in Dockerfile
 
 Updating for the Dockerfile best practices so I could get the backend image to work while using a small base image with less vulnerabilities was harder than expected. I spent a few hours more than I had hoped to.
 
