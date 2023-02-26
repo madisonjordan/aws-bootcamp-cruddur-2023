@@ -81,7 +81,7 @@ Dockerhub:
 
 ### Vulnerability Scanning
 
-scanning from docker CLI using Synk
+scanning from docker CLI using Snyk
 ```
 docker scan -f Dockerfile cruddur-backend:1.0.0     
 ```
