@@ -57,6 +57,21 @@ Built Docker Images:
 
 <img width="1040" alt="Docker Images on Local Machine" src="https://user-images.githubusercontent.com/22087300/221383386-a8d6d071-c15c-40b8-b18c-8c5265b4b91e.png">
 
+### Pushing an Image to a Container Registry
+
+Build image to push to `madisonjordan` account on Dockerhub:
+```
+docker build -t madisonjordan/crudder-backend:1.0.0 .
+```
+
+I then pushed the built image using the Docker Desktop application while logged in instead of using the cli commands for `docker login` and `docker push`. 
+
+
+Dockerhub:
+
+<img width="680" alt="Image pushed on Dockerhub" src="https://user-images.githubusercontent.com/22087300/221384977-e7d802c9-d4ca-433e-bf68-9848f4d0304c.png">
+
+
 ### Multi-Stage Build
 
 | Image | Original | New | 
