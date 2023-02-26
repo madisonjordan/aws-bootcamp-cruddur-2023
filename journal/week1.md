@@ -64,7 +64,7 @@ Build image to push to `madisonjordan` account on Dockerhub:
 docker build -t madisonjordan/crudder-backend:1.0.0 .
 ```
 
-I then pushed the built image using the Docker Desktop application while logged in instead of using the cli commands for `docker login` and `docker push`. 
+I then pushed the built image using the Docker Desktop application while logged in. Used instead of using the CLI commands for `docker login` and `docker push`. 
 
 
 Dockerhub:
@@ -80,6 +80,11 @@ Dockerhub:
 | Backend |    129.48 MB  |     |
 
 ### Vulnerability Scanning
+
+scanning from docker CLI using Synk
+```
+docker scan -f Dockerfile cruddur-backend:1.0.0     
+```
 
 | Image | Original | New |
 | --- | ---| ---- |
