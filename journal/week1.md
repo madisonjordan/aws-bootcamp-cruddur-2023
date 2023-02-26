@@ -71,15 +71,24 @@ Dockerhub:
 
 <img width="680" alt="Image pushed on Dockerhub" src="https://user-images.githubusercontent.com/22087300/221384977-e7d802c9-d4ca-433e-bf68-9848f4d0304c.png">
 
+### Dockerfile Best Practices
 
-### Multi-Stage Build
+- Using multi-stage builds
+- Reducing vulnerabilities
+- Creating non-root user
+
+References:
+[TestDriven.io - Dockerfile Best Practices ](https://testdriven.io/blog/docker-best-practices/)
+
+
+#### Multi-Stage Build
 
 | Image | Original | New | 
 | ------| ---------: | ----: |
 | Frontend |   1.19 GB |   |
 | Backend |    129.48 MB  |     |
 
-### Vulnerability Scanning
+#### Vulnerability Scanning
 
 scanning from docker CLI using Snyk
 ```
