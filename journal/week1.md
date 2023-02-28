@@ -102,13 +102,14 @@ Updating for the Dockerfile best practices so I could get the backend image to w
 
 References:
 - [TestDriven.io - Dockerfile Best Practices ](https://testdriven.io/blog/docker-best-practices/)
+- [hackernoon - Create Lean Node.js image with Docker multi-stage build](https://medium.com/hackernoon/create-lean-node-js-image-with-docker-multi-stage-build-252e927cbf3e)
 
 
 #### Multi-Stage Build
 
 | Image | Original | New | 
 | ------| ---------: | ----: |
-| Frontend |   1.19 GB |   |
+| Frontend |   1.19 GB | 432.77 MB  |
 | Backend |    129.48 MB  |  120.28 MB  |
 
 Not a huge difference in the size of the backend final image when switching to Ubuntu:20.04 as the base image, but it was already pretty small to begin with. 
@@ -124,3 +125,6 @@ docker scan -f Dockerfile cruddur-backend:1.0.0
 | --- | ---| ---- |
 |Frontend | <img width="842" alt="Original Frontend Dockerfile" src="https://user-images.githubusercontent.com/22087300/221383780-758c2429-8d81-42e1-ad0a-1203206ffd12.png"> | |
 |Backend | <img width="842" alt="Original Backend Dockerfile" src="https://user-images.githubusercontent.com/22087300/221383768-d014f688-a5f0-41d0-8b49-05c0384afbfa.png"> | <img width="877" alt="Modified Backend Dockerfile" src="https://user-images.githubusercontent.com/22087300/221389059-5f96dbb8-57b1-437e-86d8-ac91d6cb20b9.png">|
+
+
+I ran out of scans for the month and I don't want to sign up for Snyk right now.  
