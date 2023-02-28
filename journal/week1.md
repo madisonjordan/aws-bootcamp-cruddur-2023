@@ -28,22 +28,37 @@
 
 
 
-#### Next Steps
-TBD
-
 ---
 ## Knowledge Transfer
 
 #### Key Takeaways
 <!-- Key takeaways for this week -->
+- dynamodb-local emulates a database and is good for testing
+- use docker-compose to use docker containers with shared environment variables, databases, and networks
 
 #### Questions
 <!-- Questions on the materials or concepts with their answers, if available.-->
+> Q. Why are commands in docker specified as a list instead of a string?
 
+&emsp; A.
+
+> Q. What is the difference between using ENTRYPOINT and CMD in docker?
+
+&emsp; A. CMD can be more easily overriden to use another command instead. 
 
 ---
 
 ## Required Homework 
+
+
+Join Cruddur:
+
+<img width="877" alt="Join Cruddur" src="https://user-images.githubusercontent.com/22087300/221727213-6d824075-71b7-435c-b4f6-d01da4310778.png">
+
+
+Notifications Page:
+
+<img width="877" alt="Notifications Page" src="https://user-images.githubusercontent.com/22087300/221727250-fee03bd0-5e90-45b0-b7ee-26b1fb5f00b5.png">
 
 
 ## Homework Challenges
