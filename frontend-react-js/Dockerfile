@@ -15,6 +15,7 @@ RUN npm install
 FROM node:16.19-bullseye-slim AS final
 # copy dependecies
 COPY --from=builder /frontend-react-js/node_modules ./node_modules
+COPY . /frontend-react-js
 WORKDIR /frontend-react-js
 
 ENV PORT=3000
