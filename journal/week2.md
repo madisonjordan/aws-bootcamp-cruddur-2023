@@ -51,6 +51,26 @@ remove universally set honeycomb service name:
 gp env -u HONEYCOMB_SERVICE_NAME
 ```
 
-<img width="793" alt="Error Honeycomb Header" src="https://user-images.githubusercontent.com/22087300/223022012-5676530c-fefa-4b32-99fc-ce9031867fb3.png">
+
+**Error:**
 
 I was having another issue where my console honeycomb span was complaining that my Header wasn't set, but it turns out I had a typo in my env variable for my API key.
+
+<img width="793" alt="Error Honeycomb Header" src="https://user-images.githubusercontent.com/22087300/223022012-5676530c-fefa-4b32-99fc-ce9031867fb3.png">
+
+
+
+**Home Activites Mock Data Trace:**
+
+<img width="918" alt="mock data trace" src="https://user-images.githubusercontent.com/22087300/223268319-5df5b834-cb09-43de-9c5f-35813965e919.png">
+
+
+**Duration and 90th Percentile Heatmap Queries:**
+
+<img width="1313" alt="Duration and 90th Percentile Heatmap Queries" src="https://user-images.githubusercontent.com/22087300/223268758-bb9cc5e0-1557-42b0-88b7-cfc52249c8b5.png">
+
+
+**Mock Data Length Query:**
+
+<img width="1199" alt="Mock Data Length Query" src="https://user-images.githubusercontent.com/22087300/223268836-d4781969-e216-47fa-a55d-9c2fded4fe2d.png">
+
