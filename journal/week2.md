@@ -51,4 +51,6 @@ remove universally set honeycomb service name:
 gp env -u HONEYCOMB_SERVICE_NAME
 ```
 
+<img width="793" alt="Error Honeycomb Header" src="https://user-images.githubusercontent.com/22087300/223022012-5676530c-fefa-4b32-99fc-ce9031867fb3.png">
+
 I was having another issue where my console honeycomb span was complaining that my Header wasn't set, but it turns out I had a typo in my env variable for my API key.
