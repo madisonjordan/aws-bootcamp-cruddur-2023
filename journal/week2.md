@@ -106,10 +106,10 @@ From CloudWatch:
 Create X-Ray Group:
 
 ```
-aws xray create-group \
->    --group-name "Cruddur" \
->    --filter-expression "service(\"backend-flask\")" 
+ aws xray create-group --group-name "Cruddur"  --filter-expression "service()"
 ```
+
+_Note: changed to `service()` instead of `service(\"backend-flask\")` for proper grouping._
 
 <br>
 
@@ -139,4 +139,6 @@ X-Ray Trace Dashboard:
 X-Ray Trace:
 
 <img width="1387" alt="X-Ray Trace" src="https://user-images.githubusercontent.com/22087300/223820800-8e49d29d-6658-4fc8-a71f-7abe7efb5031.png">
+
+<img width="1392" alt="X-Ray Subsegments" src="https://user-images.githubusercontent.com/22087300/223846268-69d74440-0507-4173-a637-6d98c0716560.png">
 
