@@ -42,9 +42,7 @@ tracer = trace.get_tracer(__name__)
 
 # X-RAY --------
 xray_url = os.getenv("AWS_XRAY_URL")
-xray_recorder.configure(service='backend-flask', dynamic_naming=xray_url)
-xray_recorder.begin_segment('backend-flask')
-
+xray_recorder.configure(service='backend-flask', dynamic_naming='backend-flask')
 
 app = Flask(__name__)
 
@@ -165,10 +163,6 @@ def data_activities_reply(activity_uuid):
   else:
     return model['data'], 200
   return
-
-
-xray_recorder.end_segment()
-
 
 if __name__ == "__main__":
   app.run(debug=True)
