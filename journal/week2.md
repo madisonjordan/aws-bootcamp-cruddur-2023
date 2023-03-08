@@ -120,6 +120,10 @@ aws xray create-sampling-rule --cli-input-json file://aws/json/xray.json
 
 <br><br>
 
+#### Create Trace in X-Ray
+
+<br>
+
 X-Ray Daemon Log:
 
 <img width="991" alt="X-Ray Daemon Log" src="https://user-images.githubusercontent.com/22087300/223820944-5097aa32-8ad3-4f00-b5ad-e784796feca4.png">
