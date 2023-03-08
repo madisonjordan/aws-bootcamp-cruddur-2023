@@ -138,5 +138,5 @@ X-Ray Subsegment Trace:
 
 <img width="1396" alt="X-Ray Subsegments" src="https://user-images.githubusercontent.com/22087300/223863562-6a2c58d3-69a6-4ab8-8f75-c6fe8a7770f3.png">
 
-I changed the `dynamic_url` in the x-ray configure function in app.py so it would use the name "backend-flask" instead of the url with the port. Based on the [AWS documentation on configuring the global recorder](https://docs.aws.amazon.com/xray-sdk-for-python/latest/reference/configurations.html#segment-dynamic-naming).
+I changed the `dynamic_url` in the x-ray `configure` function in `app.py` so it would use the name "backend-flask" instead of the url with the port. Based on the [AWS documentation on configuring the global recorder](https://docs.aws.amazon.com/xray-sdk-for-python/latest/reference/configurations.html#segment-dynamic-naming) that shows that the `dynamic_url` is the name of the segment. This also allows the x-ray group to label the segments properly under the "Cruddur" group from the x-ray trace dashboard. 
 
