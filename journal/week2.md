@@ -27,9 +27,10 @@ Had trouble hitting the backend `/api/activities/home` endpoint on port 4567 eve
 
 #### Key Takeaways
 <!-- Key takeaways for this week -->
-Honeycomb:
-- In Honeycomb, the `OTLPSpanExporter()` function is responsible for parsing the configuration for where to send the send the spans used such as the Endpoint and Headers that contain the Honeycomb API key, which we have set as environment variables for it to parse instead of setting explicitly in the code. 
-- Better NOT to set a universal service name for Honeycomb and have names for each service to see which service is not functioning as intended when data is sent. 
+Tracing:
+- In Honeycomb, the `OTLPSpanExporter()` function is responsible for parsing the configuration for where to send the send the spans used such as the Endpoint and Headers that contain the Honeycomb API key, which we have set as environment variables for it to parse instead of setting explicitly in the code.
+   - In general, it might be better to explictly set your configuration in the code rather than have it read from the environment variables in case the environment variables are not set and will fail to provide your intended traces. 
+- Better NOT to set a universal service name and have names for each service to see which service is not functioning as intended when data is sent. 
 
 Docker:
 - When using Docker containers in an enterprise setting, you often have a development image, which has all the tools you need for development in it (e.g. one based of Ubuntu for a full operating system), and a slimmer production image, which has only what is necessary and removes tools that you don't need that could make the image less secure (e.g. one based on alpine). They are optimized for different purposes. 
@@ -43,7 +44,7 @@ A. It allows for filtering, post-processing, formatting, etc. of requests before
 
 ## Required Homework 
 
-### Setup Honeycomb
+### Configure Honeycomb
 
 I had to look up how to remove the env variable we set for honeycomb service names before Jessica mentioned that we'd want separate service names to get more meaningful data than if all the services were named "Cruddur"
 
@@ -51,7 +52,7 @@ remove universally set honeycomb service name:
 ```
 gp env -u HONEYCOMB_SERVICE_NAME
 ```
-
+<br>
 
 **Error:**
 
@@ -59,19 +60,37 @@ I was having another issue where my console honeycomb span was complaining that 
 
 <img width="793" alt="Error Honeycomb Header" src="https://user-images.githubusercontent.com/22087300/223022012-5676530c-fefa-4b32-99fc-ce9031867fb3.png">
 
+<br><br>
 
+### Create a Span for Tracing on Honeycomb
 
-**Home Activites Mock Data Trace:**
+<br>
+
+Home Activites Mock Data Trace:
 
 <img width="918" alt="mock data trace" src="https://user-images.githubusercontent.com/22087300/223268319-5df5b834-cb09-43de-9c5f-35813965e919.png">
 
+### Create Queries on Honeycomb
 
-**Duration and 90th Percentile Heatmap Queries:**
+<br>
+
+Duration and 90th Percentile Heatmap Queries:
 
 <img width="1313" alt="Duration and 90th Percentile Heatmap Queries" src="https://user-images.githubusercontent.com/22087300/223268758-bb9cc5e0-1557-42b0-88b7-cfc52249c8b5.png">
 
+<br><br>
 
-**Mock Data Length Query:**
+Mock Data Length Query:
 
 <img width="1199" alt="Mock Data Length Query" src="https://user-images.githubusercontent.com/22087300/223268836-d4781969-e216-47fa-a55d-9c2fded4fe2d.png">
 
+<br><br>
+
+### Configure X-Ray
+
+#### Finding the x-ray group dashboard
+
+From CloudWatch:
+1. Click "settings" on the left sidebar
+2. Click the "traces" tab at the top
+3. Under "X-Ray traces", click "view settings" under "groups"
