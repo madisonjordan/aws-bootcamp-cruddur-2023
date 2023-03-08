@@ -88,6 +88,8 @@ Mock Data Length Query:
 
 ### Setup X-Ray
 
+<br>
+
 #### Finding the x-ray group dashboard
 
 From CloudWatch:
@@ -95,8 +97,11 @@ From CloudWatch:
 2. Click the "traces" tab at the top
 3. Under "X-Ray traces", click "view settings" under "groups"
 
+<br>
 
 #### Configure X-Ray
+
+<br>
 
 Create X-Ray Group:
 
@@ -106,7 +111,28 @@ aws xray create-group \
 >    --filter-expression "service(\"backend-flask\")" 
 ```
 
+<br>
+
 Create Sampling Rule:
 ```
 aws xray create-sampling-rule --cli-input-json file://aws/json/xray.json
 ```
+
+<br><br>
+
+X-Ray Daemon Log:
+
+<img width="991" alt="X-Ray Daemon Log" src="https://user-images.githubusercontent.com/22087300/223820944-5097aa32-8ad3-4f00-b5ad-e784796feca4.png">
+
+<br><br>
+
+X-Ray Trace Dashboard:
+
+<img width="1324" alt="X-Ray Trace Dashboard" src="https://user-images.githubusercontent.com/22087300/223820903-4218549e-6b52-4519-8988-3b4997c923f5.png">
+
+<br><br>
+
+X-Ray Trace:
+
+<img width="1387" alt="X-Ray Trace" src="https://user-images.githubusercontent.com/22087300/223820800-8e49d29d-6658-4fc8-a71f-7abe7efb5031.png">
+
