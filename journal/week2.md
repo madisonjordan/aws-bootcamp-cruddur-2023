@@ -36,7 +36,7 @@ Docker:
 
 #### Questions
 <!-- Questions on the materials or concepts with their answers, if available.-->
-Q. What is middleware?
+Q. What is middleware?<br>
 A. It allows for filtering, post-processing, formatting, etc. of requests before they are passed to the application. 
 
 ---
