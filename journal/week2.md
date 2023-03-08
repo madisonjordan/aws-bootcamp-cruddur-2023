@@ -106,10 +106,8 @@ From CloudWatch:
 Create X-Ray Group:
 
 ```
- aws xray create-group --group-name "Cruddur"  --filter-expression "service()"
+ aws xray create-group --group-name "Cruddur"  --filter-expression "service(\"backend-flask\")"
 ```
-
-_Note: changed to `service()` instead of `service(\"backend-flask\")` for proper grouping._
 
 <br>
 
@@ -132,13 +130,13 @@ X-Ray Daemon Log:
 
 X-Ray Trace Dashboard:
 
-<img width="1324" alt="X-Ray Trace Dashboard" src="https://user-images.githubusercontent.com/22087300/223820903-4218549e-6b52-4519-8988-3b4997c923f5.png">
+<img width="1182" alt="X-Ray Trace Dashboard" src="https://user-images.githubusercontent.com/22087300/223863672-882b11cd-f8c2-45fe-95fe-a8ae5f764a11.png">
 
 <br><br>
 
-X-Ray Trace:
+X-Ray Subsegment Trace:
 
-<img width="1387" alt="X-Ray Trace" src="https://user-images.githubusercontent.com/22087300/223820800-8e49d29d-6658-4fc8-a71f-7abe7efb5031.png">
+<img width="1396" alt="X-Ray Subsegments" src="https://user-images.githubusercontent.com/22087300/223863562-6a2c58d3-69a6-4ab8-8f75-c6fe8a7770f3.png">
 
-<img width="1392" alt="X-Ray Subsegments" src="https://user-images.githubusercontent.com/22087300/223846268-69d74440-0507-4173-a637-6d98c0716560.png">
+I changed the `dynamic_url` in the x-ray configure function in app.py so it would use the name "backend-flask" instead of the url with the port. Based on the [AWS documentation on configuring the global recorder](https://docs.aws.amazon.com/xray-sdk-for-python/latest/reference/configurations.html#segment-dynamic-naming).
 
