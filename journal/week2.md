@@ -86,7 +86,7 @@ Mock Data Length Query:
 
 <br><br>
 
-### Configure X-Ray
+### Setup X-Ray
 
 #### Finding the x-ray group dashboard
 
@@ -94,3 +94,19 @@ From CloudWatch:
 1. Click "settings" on the left sidebar
 2. Click the "traces" tab at the top
 3. Under "X-Ray traces", click "view settings" under "groups"
+
+
+#### Configure X-Ray
+
+Create X-Ray Group:
+
+```
+aws xray create-group \
+>    --group-name "Cruddur" \
+>    --filter-expression "service(\"backend-flask\")" 
+```
+
+Create Sampling Rule:
+```
+aws xray create-sampling-rule --cli-input-json file://aws/json/xray.json
+```
