@@ -140,3 +140,12 @@ X-Ray Subsegment Trace:
 
 I changed the `dynamic_url` in the x-ray `configure` function in `app.py` so it would use the name "backend-flask" instead of the url with the port. Based on the [AWS documentation on configuring the global recorder](https://docs.aws.amazon.com/xray-sdk-for-python/latest/reference/configurations.html#segment-dynamic-naming) that shows that the `dynamic_url` is the name of the segment. This also allows the x-ray group to label the segments properly under the "Cruddur" group from the x-ray trace dashboard. 
 
+<br><br>
+
+### Configure CloudWatch Logging
+
+<br>
+
+Home Activities CloudWatch Log:
+
+<img width="1142" alt="Home Activities CloudWatch Log" src="https://user-images.githubusercontent.com/22087300/223883200-c3cf1ee0-b2c8-4e54-816a-d16bb631f747.png">
