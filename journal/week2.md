@@ -149,3 +149,12 @@ I changed the `dynamic_url` in the x-ray `configure` function in `app.py` so it 
 Home Activities CloudWatch Log:
 
 <img width="1142" alt="Home Activities CloudWatch Log" src="https://user-images.githubusercontent.com/22087300/223883200-c3cf1ee0-b2c8-4e54-816a-d16bb631f747.png">
+
+### Configure Rollbar Error Logging
+
+
+Rollbar Error Logs:
+
+<img width="1368" alt="Rollbar Log" src="https://user-images.githubusercontent.com/22087300/223886923-df5b5965-bc94-497a-889d-fccc229e2281.png">
+
+The previous two errors shown were from forgetting to comment out some X-Ray decorators and the middleware. Other than commenting that out, it worked the first time. 
