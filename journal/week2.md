@@ -6,6 +6,7 @@
 > - [Required Homework](#required-homework)
 
 #### Weekly Outcome
+- The fractional CTO has suggested that we implement distributed tracing first so because as we begin to add cloud services it will become difficult to pinpoint issue and we want to keep pace with the (probably unrealistic) development timeline
 
 ---
 
@@ -15,6 +16,7 @@
 
 #### Reflection
 <!--Thoughts/Feelings so far.-->
+I think Rollbar is really cool for it to show errors. Also this week I learned how important knowing how to debug by using devtools in the web browser and clicking the errors and checking the docker logs are. 
 
 
 #### Challenges
