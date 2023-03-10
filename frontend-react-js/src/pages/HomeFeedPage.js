@@ -9,9 +9,6 @@ import ActivityFeed from '../components/ActivityFeed';
 import ActivityForm from '../components/ActivityForm';
 import ReplyForm from '../components/ReplyForm';
 
-// [TODO] Authenication
-import Cookies from 'js-cookie'
-
 export default function HomeFeedPage() {
   const [activities, setActivities] = React.useState([]);
   const [popped, setPopped] = React.useState(false);
@@ -37,6 +34,7 @@ export default function HomeFeedPage() {
     }
   };
 
+  // check if we are authenicated
   const checkAuth = async () => {
     Auth.currentAuthenticatedUser({
       // Optional, By default is false. 
@@ -45,7 +43,7 @@ export default function HomeFeedPage() {
       bypassCache: false 
     })
     .then((user) => {
-      console.log('user',user);
+      console.log('user', user);
       return Auth.currentAuthenticatedUser()
     }).then((cognito_user) => {
         setUser({

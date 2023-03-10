@@ -40,24 +40,21 @@
 
 ### Create Cognito User Pool 
 
-required attributes:
-- username
+required attributes:k
 - email
 
 additional attributes:
 - name
 - preferred_username
 
-### Manually Add User
+### Manually Add User from Cognito User Pool
 
 force confirm user and set permanent password:
 ```
 aws cognito-idp \
 admin-set-user-password \
---user-pool-id us-west-2_YGbwJ7zfY \
---username juliasugarbaker \
---password r5hEZmw#$4#Y2YdC \
+--user-pool-id <user_pool_id> \
+--username 232186d6-b9ff-42f7-8d1b-389f36c1a646 \
+--password VYEwG2LPPZga$ \
 --permanent
 ```
-
-_note: this will not work without `username` as a required attribute._
