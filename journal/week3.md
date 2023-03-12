@@ -6,7 +6,7 @@
 > - [Required Homework](#required-homework)
 
 #### Weekly Outcome
-
+- Practical knowledge of implementing a decentralized authentication service into a web-application with custom login and signup pages in a react application
 
 ---
 
@@ -70,4 +70,13 @@ manually updated name and preferred username:
 reset password:
 <img width="1027" alt="Successful password reset page" src="https://user-images.githubusercontent.com/22087300/224523413-6bd6a4a4-8b01-40ab-852c-f4152579bfd4.png">
 
+### Add Cognito JWT Authentication
+<br>
+Authenticated User Home Page:
+
+<img width="920" alt="Authenticated User Home Page" src="https://user-images.githubusercontent.com/22087300/224577717-f5cbaaad-b6c2-4da3-9026-5593e1fb4333.png">
+
+Logs:
+
+<img width="684" alt="Authentication Logging" src="https://user-images.githubusercontent.com/22087300/224577700-8811a503-915d-4dd5-9f11-4c7a77318fdf.png">
 
