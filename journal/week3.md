@@ -60,4 +60,12 @@ admin-set-user-password \
 ```
 <img width="1018" alt="Force Confirm User" src="https://user-images.githubusercontent.com/22087300/224421652-c84d359c-e102-4914-9e40-3a2c33ccdd82.png">
 
-<img width="1108" alt="Signed In User" src="https://user-images.githubusercontent.com/22087300/224422057-0f2a12a5-7dce-4943-9c90-cf353b186da3.png">
+<img width="1108" alt="Signed in user" src="https://user-images.githubusercontent.com/22087300/224422057-0f2a12a5-7dce-4943-9c90-cf353b186da3.png">
+
+manually updated name and preferred username:
+<img width="1273" alt="Signed in user with preferred username and name atrributes" src="https://user-images.githubusercontent.com/22087300/224523375-d2143486-6acd-4201-8cc7-b598e7de1f3d.png">
+
+reset password:
+<img width="1027" alt="Successful password reset page" src="https://user-images.githubusercontent.com/22087300/224523413-6bd6a4a4-8b01-40ab-852c-f4152579bfd4.png">
+
+
