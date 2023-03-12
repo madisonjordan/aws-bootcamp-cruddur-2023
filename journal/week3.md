@@ -28,7 +28,7 @@ Debugging the cognito authentication was difficult, but once again going into de
 
 #### Key Takeaways
 <!-- Key takeaways for this week -->
-
+- Debug using console.log() can be useful. For example `console.log('user', user)` to see what the status of the `user` object in your functions. 
 
 #### Questions
 <!-- Questions on the materials or concepts with their answers, if available.-->
