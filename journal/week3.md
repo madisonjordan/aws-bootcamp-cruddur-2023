@@ -28,7 +28,9 @@ Debugging the cognito authentication was difficult, but once again going into de
 
 #### Key Takeaways
 <!-- Key takeaways for this week -->
-- Debug using console.log() can be useful. For example `console.log('user', user)` to see what the status of the `user` object in your functions. 
+Debugging:
+ - In JavaScript, using console.log() can be useful. For example `console.log('user', user)` to see what the status of the `user` object in your functions.
+ - In Python, using `logger` can help show values in your app, such as `app.logger.info()` for `INFO` level logs or `app.logger.debug()` for `DEBUG` level logs. 
 
 #### Questions
 <!-- Questions on the materials or concepts with their answers, if available.-->
