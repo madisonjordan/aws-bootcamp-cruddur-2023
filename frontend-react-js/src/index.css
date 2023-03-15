@@ -1,8 +1,17 @@
+:root {
+  --bg: rgb(55,0,130);
+  --fg: rgb(10,5,15);
+
+  --field-bg: rgb(31,31,31);
+  --field-border: rgba(255,255,255,0.6);
+  --field-border-focus: rgba(149,0,255,1);
+}
+
 * { box-sizing: border-box; }
 html,body { 
   height: 100%; 
   width: 100%; 
-  background: rgb(14,3,28);
+  background: var(--bg);
 }
 
 body {
