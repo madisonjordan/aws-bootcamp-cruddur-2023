@@ -18,7 +18,7 @@
 
 #### Reflection
 <!--Thoughts/Feelings so far.-->
-I really liked using the coloring for the terminal print statements. I'm going to use that in the future for readability.
+I really liked using the [coloring for the terminal print statements](https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux). I'm going to use that in the future for readability.
 
 #### Challenges
 <!-- Challenges you've had this week in completing your tasks. How you might solve them or what you did to solve them. -->
