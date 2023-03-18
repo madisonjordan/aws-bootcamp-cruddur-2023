@@ -18,7 +18,7 @@
 
 #### Reflection
 <!--Thoughts/Feelings so far.-->
-
+I really liked using the coloring for the terminal print statements. I'm going to use that in the future for readability.
 
 #### Challenges
 <!-- Challenges you've had this week in completing your tasks. How you might solve them or what you did to solve them. -->
@@ -27,11 +27,11 @@
 
 ---
 ## Knowledge Transfer
-Creating a Database:
-- explicitly set both the character set and the timezone
 
 #### Key Takeaways
 <!-- Key takeaways for this week -->
+Creating a Database:
+- explicitly set both the character set and the timezone
 
 
 #### Questions
@@ -41,5 +41,3 @@ Creating a Database:
 ---
 
 ## Required Homework  
-
-
