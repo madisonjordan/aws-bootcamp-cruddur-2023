@@ -1,1 +1,10 @@
 #!/usr/bin/bash
+
+echo "db-schema-load"
+
+SCRIPT_DIR=$(dirname $0)
+pushd $SCRIPT_DIR > /dev/null
+
+psql $CONNECTION_URL cruddur < ../db/schema.sql
+
+popd > /dev/null
