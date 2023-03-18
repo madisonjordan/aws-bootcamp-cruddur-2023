@@ -8,6 +8,13 @@ printf "${CYAN}== ${LABEL}${NO_COLOR}\n"
 SCRIPT_DIR=$(dirname $0)
 pushd $SCRIPT_DIR > /dev/null
 
-psql $CONNECTION_URL cruddur < ../db/schema.sql
+if [ "$1" = "prod" ]; then
+  echo "Running in production mode"
+  URL=$PROD_CONNECTION_URL
+else
+  URL=$CONNECTION_URL
+fi
+
+psql $URL cruddur < ../db/schema.sql
 
 popd > /dev/null
