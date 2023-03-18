@@ -1,0 +1,21 @@
+#!/usr/bin/bash
+
+LABEL="db-seed"
+CYAN='\033[1;36m'
+PINK='\033[35;1m'
+NO_COLOR='\033[0m'
+printf "${CYAN}== ${LABEL}${NO_COLOR}\n"
+
+SCRIPT_DIR=$(dirname $0)
+pushd $SCRIPT_DIR > /dev/null
+
+if [ "$1" = "prod" ]; then
+  printf "${PINK}[Running in PRODUCTION mode]${NO_COLOR}\n"
+  URL=$PROD_CONNECTION_URL
+else
+  URL=$CONNECTION_URL
+fi
+
+psql $URL cruddur < ../db/seed.sql
+
+popd > /dev/null
