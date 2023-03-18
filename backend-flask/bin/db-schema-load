@@ -1,6 +1,9 @@
 #!/usr/bin/bash
 
-echo "db-schema-load"
+LABEL="db-schema-load"
+CYAN='\033[1;36m'
+NO_COLOR='\033[0m'
+printf "${CYAN}== ${LABEL}${NO_COLOR}\n"
 
 SCRIPT_DIR=$(dirname $0)
 pushd $SCRIPT_DIR > /dev/null
