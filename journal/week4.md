@@ -41,3 +41,9 @@ Creating a Database:
 ---
 
 ## Required Homework  
+
+Added [precompiled psycopg2 lambda layer](https://github.com/jetbridge/psycopg2-lambda-layer) my region.
+
+```
+arn:aws:lambda:us-west-2:898466741470:layer:psycopg2-py38:1
+```
