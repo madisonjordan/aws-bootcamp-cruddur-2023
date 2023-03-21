@@ -115,7 +115,7 @@ class Db:
     print ("psycopg traceback:", traceback, "-- type:", err_type)
 
     # print the pgcode and pgerror exceptions
-    print ("pgerror:", err.Error)
-    print ("pgcode:", err.sqlstate, "\n")
+    print ("pgerror:", err.pgcode)
+    print ("pgcode:", err.pgerror, "\n")
 
 db = Db()
