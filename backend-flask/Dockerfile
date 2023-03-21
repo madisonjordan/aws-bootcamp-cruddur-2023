@@ -29,6 +29,7 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     python3 \
     python3-pip \
+    libpq-dev \
     && rm -rf /var/lib/apt/lists/* \
     && pip install --no-cache /wheels/*
 

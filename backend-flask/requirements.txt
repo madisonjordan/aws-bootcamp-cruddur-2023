@@ -17,4 +17,4 @@ rollbar
 python-jose
 
 psycopg[binary]
-psycopg[pool]
+psycopg_pool
