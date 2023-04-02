@@ -16,6 +16,6 @@ else
   URL=$CONNECTION_URL
 fi
 
-psql $URL cruddur < ../db/seed.sql
+psql $URL cruddur < ../../db/seed.sql
 
 popd > /dev/null

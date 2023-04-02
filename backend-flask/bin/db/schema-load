@@ -16,6 +16,6 @@ else
   URL=$CONNECTION_URL
 fi
 
-psql $URL cruddur < ../db/schema.sql
+psql $URL cruddur < ../../db/schema.sql
 
 popd > /dev/null
