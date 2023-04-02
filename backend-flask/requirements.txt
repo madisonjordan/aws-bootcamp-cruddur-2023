@@ -18,3 +18,5 @@ python-jose
 
 psycopg[binary]
 psycopg_pool
+
+boto3
