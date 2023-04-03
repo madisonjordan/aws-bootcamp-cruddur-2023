@@ -1,0 +1,15 @@
+#! /usr/bin/bash
+-e # stop if it fails at any point
+
+CYAN='\033[1;36m'
+NO_COLOR='\033[0m'
+LABEL="db-setup"
+printf "${CYAN}==== ${LABEL}${NO_COLOR}\n"
+
+# parent dir of setup script 'backend-flask/bin/db'
+SCRIPT_DIR=$(dirname $0)
+
+source "$SCRIPT_DIR/drop"
+source "$SCRIPT_DIR/create"
+source "$SCRIPT_DIR/schema-load"
+source "$SCRIPT_DIR/seed"
