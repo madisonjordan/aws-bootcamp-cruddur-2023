@@ -24,6 +24,9 @@ This week I was ready to throw my computer out the window getting the dynamodb s
 <img width="854" alt="dynamodb seed error in postgres" src="https://user-images.githubusercontent.com/22087300/229407466-39edb6eb-7797-4a4a-8bcb-96995693d6bf.png">
 <img width="951" alt="dynamodb seed working after postgres url change" src="https://user-images.githubusercontent.com/22087300/229407478-9ed35b46-8060-4ae4-9c91-c359c7779d47.png">
 
+I couldn't get my backend to find the `boto3` module without running `pip install -r requirements.txt` from the development environment first. But it showed up as installing in the build logs in docker compose. I searched through stackoverflow to see if I had done it incorrectly and tried to install the requirements using the `--user` flag and also specifying python3 / pip3. It didn't work so I was starting to look into using Poetry `pyproject.toml`  for managing dependencies in the multi-stage build. 
+After a couple hours I decided that I should take the L and just manually run `pip install -r requirements.txt` from the development environment every time until I learn more about building python docker images and have more time. I should probably focus on the actual content of the course, but the dependency management offered by Poetry looks interesting and I've seen it elsewhere, so I'll have to look more into that later.
+
 
 ---
 ## Knowledge Transfer
