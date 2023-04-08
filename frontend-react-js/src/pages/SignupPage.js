@@ -34,7 +34,7 @@ export default function SignupPage() {
       window.location.href = `/confirm?email=${email}`
     } catch (error) {
       console.log(error);
-      setCognitoErrors(error.message)
+      setErrors(error.message)
     }
     return false
   }
