@@ -40,3 +40,11 @@
 ---
 
 ## Required Homework  
+
+### ECR Repo
+I created a repo for cruddur-python, but I didn't want to add my account id in the commited dockerfile and I was concerned about having to maintain that container myself to periodically update security vulnerabilities since the last pushed tag.
+
+Instead, I used the [Docker's official images in the public registry on ECR](https://gallery.ecr.aws/docker/).
+It appeared to build correctly and work with the health-check. 
+
+I still created and pushed the private repo for backend-flask. 

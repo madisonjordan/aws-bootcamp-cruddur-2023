@@ -1,4 +1,4 @@
-FROM python:3.10-slim-buster AS builder
+FROM public.ecr.aws/docker/library/python:3.10-slim-buster AS builder
 
 WORKDIR /backend-flask
 
@@ -11,7 +11,7 @@ RUN apt-get update && \
 COPY requirements.txt .
 RUN pip wheel --no-cache-dir --no-deps --wheel-dir ./wheels -r requirements.txt
 
-FROM ubuntu:20.04 AS final
+FROM public.ecr.aws/docker/library/ubuntu:20.04 AS final
 
 # Create non-root user
 ARG USERNAME=docker
@@ -37,7 +37,7 @@ RUN apt-get update \
 WORKDIR /backend-flask
 COPY . .
 
-ENV FLASK_ENV=development
+ENV FLASK_DEBUG=1
 EXPOSE ${PORT}
 
 USER ${USERNAME}
