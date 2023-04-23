@@ -7,6 +7,9 @@ fi
 TASK_ID=$1
 CONTAINER_NAME=$2
 
+echo "Task ID: $TASK_ID"
+echo "Container Name: $CONTAINER_NAME"
+
 aws ecs execute-command  \
 --region $AWS_DEFAULT_REGION \
 --cluster cruddur \
