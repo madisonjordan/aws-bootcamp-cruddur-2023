@@ -11,8 +11,17 @@
   "containerDefinitions": [
     {
       "name": "frontend-react-js",
-      "image": "<ACCOUNT>.dkr.ecr.<REGION>.amazonaws.com/frontend-react-js",
+      "image": "<ACCOUNT>.dkr.ecr.us-west-2.amazonaws.com/frontend-react-js",
       "essential": true,
+      "healthCheck": {
+        "command": [
+          "CMD-SHELL",
+          "curl -f http://localhost:3000 || exit 1"
+        ],
+        "interval": 30,
+        "timeout": 5,
+        "retries": 3
+      },
       "portMappings": [
         {
           "name": "frontend-react-js",
