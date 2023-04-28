@@ -3,15 +3,10 @@
 - Application: Cruddur
 - Cohort: 2023-A1
 
-This is the starting codebase that will be used in the FREE AWS Cloud Project Bootcamp 2023
 
 ![Cruddur Graphic](_docs/assets/cruddur-banner.jpg)
 
 ![Cruddur Screenshot](_docs/assets/cruddur-screenshot.png)
-
-## Instructions
-
-At the start of the bootcamp you need to create a new Github Repository from this template.
 
 ## Journaling Homework
 
@@ -31,3 +26,36 @@ The `/journal` directory contains
 - [ ] [Week 11](journal/week11.md)
 - [ ] [Week 12](journal/week12.md)
 - [ ] [Week 13](journal/week13.md)
+
+## Instructions
+
+### Local Environment (Development)
+
+The local environment uses a local Postgres container for users and their activities.
+
+1. Set env variables in `docker-compose.yaml`:
+   - update `CONNECTION_URL` in the backend-flask scope to use your local postgres container url
+2. Run `docker-compose.yaml` from the project root
+3. Run the Postgres database `setup` script to create the database, tables, seed users and activities, and update seeded users' UUIDs from Cognito
+4. Run the DynamoDB schema-load and seed scripts to created seed conversations between the seeded users
+
+
+### Production Environment
+
+The production environment uses RDS (Postgres) for users and their activities.
+
+1. If `user` and `activities` tables DO NOT EXIST in the RDS, run the Postgres database `schema-load` script with `prod` as the first argument to initialize the tables in the RDS
+2. If the backend-flask and frontend-react-js services are NOT deployed to ECS, create the services from the json files.
+  ```bash
+  aws ecs create-service --cli-input-json file://aws/json/service-backend-flask.json
+  ```
+  ```bash
+  aws ecs create-service --cli-input-json file://aws/json/service-frontend-react-js.json
+  ```
+  _If the service's task definitions DO NOT EXIST, you must create them_
+  ```bash
+  aws ecs register-task-definition --cli-input-json file://aws/task-definitions/backend-flask.json
+  ```
+  ```bash
+  aws ecs register-task-definition --cli-input-json file://aws/task-definitions/frontend-react-js.json
+  ```
