@@ -63,3 +63,14 @@ The production environment uses RDS (Postgres) for users and their activities.
 ## Troubleshooting
 
 ![](/journal/assets/cruddur_debugging_flowchart.svg)
+
+Local:
+- Check container logs
+- Inspect on browser using Developer Tools
+
+AWS Production:
+- Check logs from the deployed services on CloudWatch
+- Connect to the ECS task and check whether functions can run and if any errors are displayed
+- Check security groups and inbound rules on each of the services used (eg. ALB, EC2, RDS) for connectivity issues between them
+- Inspect on browser using Developer Tools
+
