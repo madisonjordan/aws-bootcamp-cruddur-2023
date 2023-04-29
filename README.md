@@ -59,3 +59,7 @@ The production environment uses RDS (Postgres) for users and their activities.
   ```bash
   aws ecs register-task-definition --cli-input-json file://aws/task-definitions/frontend-react-js.json
   ```
+
+## Troubleshooting
+
+![](/journal/assets/cruddur_debugging_flowchart.svg)
