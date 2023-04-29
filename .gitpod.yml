@@ -1,3 +1,4 @@
+image: gitpod/workspace-full:2023-04-20-16-32-37
 tasks:
   - name: aws-cli
     env:
