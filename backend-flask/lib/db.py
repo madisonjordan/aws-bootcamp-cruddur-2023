@@ -9,7 +9,7 @@ class Db:
     self.init_pool()
 
   def template(self,*args):
-    pathing = list((app.root_path,'db','sql',) + args)
+    pathing = list((app.root_path,'sql',) + args)
     pathing[-1] = pathing[-1] + ".sql"
 
     template_path = os.path.join(*pathing)
