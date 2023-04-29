@@ -33,15 +33,18 @@ vscode:
 ports:
   - name: frontend
     port: 3000
-    onOpen: open-browser
     visibility: public
   - name: backend
     port: 4567
+    onOpen: ignore
     visibility: public
   - name: xray-daemon
     port: 2000
+    onOpen: ignore
     visibility: public
   - name: postgres
     port: 5432
+    onOpen: ignore
   - name: dynamodb
     port: 8000
+    onOpen: ignore
