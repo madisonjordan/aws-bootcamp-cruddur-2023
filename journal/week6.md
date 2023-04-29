@@ -24,7 +24,9 @@
 #### Challenges
 <!-- Challenges you've had this week in completing your tasks. How you might solve them or what you did to solve them. -->
 
-
+I had a problem in Gitpod where the frontend and backend ports upon a docker-compose would be stuck on "detecting." 
+I attempted to use an earlier gitpod workspace image, but the issue persisted. I looked at the Gitpod docs on ports [here](https://www.gitpod.io/docs/references/gitpod-cli#ports) and ran the command `gp ports list`. It showed the frontend and backend ports listed as "open on localhost" instead of "open (public)". 
+I used a command to open the preview url `gp preview $(gp url 3000) --external`, as shown in the Gitpod docs [here](https://www.gitpod.io/docs/references/gitpod-cli#preview), and was able to continue with development. 
 
 ---
 ## Knowledge Transfer
