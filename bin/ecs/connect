@@ -1,7 +1,7 @@
 #! /usr/bin/bash
 
 if [ -z "$2" ]; then
-  echo -e "Missing required Task ID and Container Name. \n\teg) ./bin/ecs/connect-to-service TASK_ID CONTAINER_NAME "
+  echo -e "Missing required Task ID and Container Name. \n\teg) ./bin/ecs/connect TASK_ID CONTAINER_NAME "
   exit 1
 fi
 TASK_ID=$1

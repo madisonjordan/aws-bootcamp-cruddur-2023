@@ -1,0 +1,30 @@
+#!/bin/bash
+set -e
+
+if [[ -z "$1" ]]; then
+  echo -e "Missing argument 'backend' or 'frontend'"
+  exit 1
+fi
+
+if [[ "$1" == "backend" ]]; then
+
+  if [[ -z "${ECR_BACKEND_FLASK_URL}" ]]; then
+    ECR_BACKEND_FLASK_URL="$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/backend-flask"
+  fi
+
+  echo $ECR_BACKEND_FLASK_URL
+
+  docker tag backend-flask:latest $ECR_BACKEND_FLASK_URL:latest
+  docker push $ECR_BACKEND_FLASK_URL:latest
+fi
+
+if [[ "$1" == "frontend" ]]; then
+  if [[ -z "${ECR_FRONTEND_REACT_URL}" ]]; then
+    ECR_FRONTEND_REACT_URL="$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/frontend-react-js"
+  fi
+
+  echo $ECR_FRONTEND_REACT_URL
+
+  docker tag frontend-react-js:latest $ECR_FRONTEND_REACT_URL:latest
+  docker push $ECR_FRONTEND_REACT_URL:latest
+fi

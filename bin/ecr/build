@@ -1,0 +1,30 @@
+#! /usr/bin/bash
+
+SCRIPT_PATH=$(dirname $(readlink -f "$0"))
+# bin/backend
+BIN_PATH=$(dirname $SCRIPT_PATH)
+PROJECT_PATH=$(dirname $BIN_PATH)
+
+if [[ -z "$1" ]]; then
+  echo -e "Missing argument 'backend' or 'frontend'"
+  exit 1
+fi
+
+if [[ "$1" == "backend" ]]; then
+  docker build \
+  -f "$PROJECT_PATH/backend-flask/Dockerfile.prod" \
+  -t backend-flask \
+  "$PROJECT_PATH/backend-flask"
+fi
+
+if [[ "$1" == "frontend" ]]; then
+  docker build \
+  --build-arg REACT_APP_BACKEND_URL="https://api.kapingkaping.cloud" \
+  --build-arg REACT_APP_AWS_PROJECT_REGION="$AWS_DEFAULT_REGION" \
+  --build-arg REACT_APP_AWS_COGNITO_REGION="$AWS_DEFAULT_REGION" \
+  --build-arg REACT_APP_AWS_USER_POOLS_ID="us-west-2_hplcZHuxf" \
+  --build-arg REACT_APP_CLIENT_ID="5481bg7v1pub3u36jmkhfur97s" \
+  -f "$PROJECT_PATH/frontend-react-js/Dockerfile.prod" \
+  -t frontend-react-js \
+  "$PROJECT_PATH/frontend-react-js"
+fi

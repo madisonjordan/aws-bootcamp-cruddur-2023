@@ -1,14 +1,17 @@
 #! /usr/bin/bash
 set -e
 
-CLUSTER_NAME="cruddur"
-SERVICE_NAME="backend-flask"
-TASK_DEFINTION_FAMILY="backend-flask"
-
 if [ -z "$1" ]; then
   echo "Missing argument 'update' or 'info'."
   exit 1
+elif [ -z "$2" ]; then
+  echo "Missing service name argument 'backend-flask' or 'frontend-react-js'."
+  exit 2
 fi
+
+CLUSTER_NAME="cruddur"
+SERVICE_NAME="$2"
+TASK_DEFINTION_FAMILY="${SERVICE_NAME}"
 
 echo -e "CLUSTER: $CLUSTER_NAME\nSERVICE: $SERVICE_NAME"
 
@@ -21,7 +24,7 @@ LATEST_TASK_DEFINITION_ARN=$(aws ecs describe-task-definition \
 --query 'taskDefinition.taskDefinitionArn' \
 --output text)
 
-echo "TASK DEF ARN:"
+echo -e "\nTASK DEF ARN:"
 echo -e "\t$LATEST_TASK_DEFINITION_ARN\n"
 
 if [ "$1" == "update" ]; then
