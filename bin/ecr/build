@@ -1,7 +1,7 @@
 #! /usr/bin/bash
 
 SCRIPT_PATH=$(dirname $(readlink -f "$0"))
-# bin/backend
+# bin/ecr
 BIN_PATH=$(dirname $SCRIPT_PATH)
 PROJECT_PATH=$(dirname $BIN_PATH)
 
