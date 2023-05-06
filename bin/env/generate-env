@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'erb'
+
+def generate_env(name)
+  template = File.read "erb/#{name}.env.erb"
+  content = ERB.new(template).result(binding)
+  filename = "#{name}.env"
+  File.write(filename, content)
+end
+
+generate_env("backend-flask")
+generate_env("frontend-react-js")
+
