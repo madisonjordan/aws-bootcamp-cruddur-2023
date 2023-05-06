@@ -1,4 +1,5 @@
 #! /usr/bin/bash
+set -e
 
 SCRIPT_PATH=$(dirname $(readlink -f "$0"))
 # bin/ecr
