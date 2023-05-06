@@ -1,0 +1,19 @@
+#! /usr/bin/bash
+set -e
+
+SCRIPT_PATH=$(dirname $(readlink -f "$0"))
+# bin/ecs
+BIN_PATH=$(dirname $SCRIPT_PATH)
+PROJECT_PATH=$(dirname $BIN_PATH)
+
+if [[ -z "$1" ]]; then
+  echo -e "Missing argument 'backend-flask' or 'frontend-react-js'"
+  exit 1
+fi
+
+SERVICE_NAME=$1
+
+echo -e "Registering task definition for $SERVICE_NAME...\n"
+
+aws ecs register-task-definition \
+--cli-input-json "file://$PROJECT_PATH/aws/task-definitions/${SERVICE_NAME}.json"
