@@ -7,18 +7,18 @@ BIN_PATH=$(dirname $SCRIPT_PATH)
 PROJECT_PATH=$(dirname $BIN_PATH)
 
 if [[ -z "$1" ]]; then
-  echo -e "Missing argument 'backend' or 'frontend'"
+  echo -e "Missing argument 'backend-flask' or 'frontend-react-js'"
   exit 1
 fi
 
-if [[ "$1" == "backend" ]]; then
+if [[ "$1" == "backend-flask" ]]; then
   docker build \
   -f "$PROJECT_PATH/backend-flask/Dockerfile.prod" \
   -t backend-flask \
   "$PROJECT_PATH/backend-flask"
 fi
 
-if [[ "$1" == "frontend" ]]; then
+if [[ "$1" == "frontend-react-js" ]]; then
   docker build \
   --build-arg REACT_APP_BACKEND_URL="https://api.kapingkaping.cloud" \
   --build-arg REACT_APP_AWS_PROJECT_REGION="$AWS_DEFAULT_REGION" \

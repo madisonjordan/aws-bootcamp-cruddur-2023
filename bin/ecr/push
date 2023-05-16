@@ -2,11 +2,11 @@
 set -e
 
 if [[ -z "$1" ]]; then
-  echo -e "Missing argument 'backend' or 'frontend'"
+  echo -e "Missing argument 'backend-flask' or 'frontend-react-js'"
   exit 1
 fi
 
-if [[ "$1" == "backend" ]]; then
+if [[ "$1" == "backend-flask" ]]; then
 
   if [[ -z "${ECR_BACKEND_FLASK_URL}" ]]; then
     ECR_BACKEND_FLASK_URL="$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/backend-flask"
@@ -17,7 +17,7 @@ if [[ "$1" == "backend" ]]; then
   docker push $ECR_BACKEND_FLASK_URL:latest
 fi
 
-if [[ "$1" == "frontend" ]]; then
+if [[ "$1" == "frontend-react-js" ]]; then
 
   if [[ -z "${ECR_FRONTEND_REACT_URL}" ]]; then
     ECR_FRONTEND_REACT_URL="$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/frontend-react-js"
