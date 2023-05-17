@@ -6,6 +6,8 @@ services:
     build: ./backend-flask
     ports:
       - "4567:4567"
+    networks:
+      - cruddur-net
     volumes:
       - ./backend-flask:/backend-flask
   frontend-react-js:
