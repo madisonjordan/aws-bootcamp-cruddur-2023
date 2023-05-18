@@ -41,6 +41,12 @@ I used a command to open the preview url `gp preview $(gp url 3000) --external`,
 #### Key Takeaways
 <!-- Key takeaways for this week -->
 - It's better to use the ECR for pulling images than DockerHub when launching services from a container registry.
+- Due to the "one process/concern per container" design, there is no benefit to using multithreaded webservers that were used on virtual machines, such as Gunicorn. You should scale out the containers as needed rather than have all the processes run on one container needlessly. 
+  - In a container, consider a vCPU as a CPU with the provisioned cycles/Ghz rather than thinking of it in terms of threads and hyperthreading.
+- Most of the logging, scaling, etc is built into FARGATE's ochestration itself. (The infrastructure for FARGATE is managed by AWS rather than needing to be setup by the user.)
+- On FARGATE, you can only use AWSVPC mode. ECS you can use host, bridge, etc. 
+  - In AWSVPC network mode, you can make different security groups per service on the ENI. 
+- Service Connect expands on App Mesh and runs Cloud Map in the background to make configuring Envoy (proxy) more manageable at scale. 
 
 
 #### Questions
