@@ -1,4 +1,4 @@
-# Week 6 — Deploying Containers
+# Week 6 & 7 — Deploying Containers / Solving CORS with a Load Balancer and Custom Domain 
 
 >__Quick Links__
 > - [Weekly Summary](#weekly-summary)
@@ -6,10 +6,16 @@
 > - [Required Homework](#required-homework)
 
 #### Weekly Outcome
+Week 6
 - Being able to push and tag container images to remote repository 
 - Practical knowledge of deploying, configuring and updating a serverless container
 - Basic knowledge of working with a cloud CLI
 
+Week 7
+- Working with DNS records and hosted zones
+- Configuring TLS termination at the load balancer
+- Deploying and configuring a load balancer for multiple subdomains
+- Basic understanding of solving CORS issues and backend-to-frontend communication
 
 ---
 
