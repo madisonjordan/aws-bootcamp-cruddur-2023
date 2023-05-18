@@ -75,6 +75,9 @@ I still created and pushed the private repo for backend-flask.
 
 <img width="785" alt="Connected through ALB" src="https://github.com/madisonjordan/aws-bootcamp-cruddur-2023/assets/22087300/23143cea-8c8c-484b-ab66-4b700aea9eec">
 
+### Setup Custom Domain using Route53
+<img width="774" alt="Cruddur on Custom Domain" src="https://github.com/madisonjordan/aws-bootcamp-cruddur-2023/assets/22087300/3815cafa-8de5-4de3-a69d-dd4e5eee9133">
+
 ### Configure Task Definitions for X-Ray
 
 <img width="1020" alt="Backend Service with X-Ray Task" src="https://github.com/madisonjordan/aws-bootcamp-cruddur-2023/assets/22087300/c3820ae9-422c-4751-8440-8e247900b96e">
