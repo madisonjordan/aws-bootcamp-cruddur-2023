@@ -1,0 +1,16 @@
+#! /usr/bin/bash
+set -e
+
+if [[ -z "$1" ]]; then
+  echo -e "Missing jpg filename"
+  exit 1
+fi
+
+AVATAR=$1
+FILENAME=${AVATAR%.*}
+
+ABS_PATH=$(readlink -f "$0")
+SERVERLESS_PATH=$(dirname $ABS_PATH)
+DATA_FILE_PATH="$SERVERLESS_PATH/files/${FILENAME}.jpg"
+
+aws s3 cp "$DATA_FILE_PATH" "s3://kapingkaping-uploaded-avatars/avatars/original/"

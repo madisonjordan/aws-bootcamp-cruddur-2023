@@ -1,0 +1,12 @@
+#! /usr/bin/bash
+#! /usr/bin/bash
+
+ABS_PATH=$(readlink -f "$0")
+BIN_PATH=$(dirname $(dirname $ABS_PATH))
+PROJECT_PATH=$(dirname $BIN_PATH)
+
+cd $PROJECT_PATH/thumbing-serverless-cdk
+
+npm install
+rm -rf node_modules/sharp
+SHARP_IGNORE_GLOBAL_LIBVIPS=1 npm install --arch=x64 --platform=linux --libc=glibc sharp
