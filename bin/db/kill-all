@@ -1,0 +1,14 @@
+#! /usr/bin/bash
+set -e
+
+CYAN='\033[1;36m'
+NO_COLOR='\033[0m'
+LABEL="db-kill-all"
+printf "${CYAN}== ${LABEL}${NO_COLOR}\n"
+
+SCRIPT_DIR=$(dirname $0)
+pushd $SCRIPT_DIR > /dev/null
+
+psql $CONNECTION_URL cruddur < ../sql/kill-all-connections.sql
+
+popd > /dev/null

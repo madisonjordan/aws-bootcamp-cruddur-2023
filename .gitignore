@@ -1,4 +1,5 @@
 db
+!bin/db
 frontend-react-js/build
 *.env
 node_modules
