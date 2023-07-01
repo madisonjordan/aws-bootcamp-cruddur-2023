@@ -11,3 +11,4 @@ SCRIPT_DIR=$(dirname $0)
 bash "$SCRIPT_DIR/db/setup"
 python3 "$SCRIPT_DIR/ddb/schema-load"
 python3 "$SCRIPT_DIR/ddb/seed"
+python3 "$SCRIPT_DIR/db/migrate"
