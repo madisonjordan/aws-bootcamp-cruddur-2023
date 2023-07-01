@@ -10,7 +10,8 @@ def handler(event:, context:)
     { 
       headers: {
         "Access-Control-Allow-Headers": "*, Authorization",
-        "Access-Control-Allow-Origin": "https://3000-omenking-awsbootcampcru-2n1d6e0bd1f.ws-us94.gitpod.io",
+        # don't use trailing slash in url
+        "Access-Control-Allow-Origin": "https://3000-madisonjord-awsbootcamp-9h0b11pahs3.ws-us101.gitpod.io",
         "Access-Control-Allow-Methods": "OPTIONS,GET,POST"
       },
       statusCode: 200
