@@ -3,7 +3,6 @@ const {getClient, getOriginalImage, processImage, uploadProcessedImage} = requir
 const path = require('path');
 
 const bucketName = process.env.DEST_BUCKET_NAME
-const folderInput = process.env.FOLDER_INPUT
 const folderOutput = process.env.FOLDER_OUTPUT
 const width = parseInt(process.env.PROCESS_WIDTH)
 const height = parseInt(process.env.PROCESS_HEIGHT)

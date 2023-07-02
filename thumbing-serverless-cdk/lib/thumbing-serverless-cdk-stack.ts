@@ -18,14 +18,12 @@ export class ThumbingServerlessCdkStack extends cdk.Stack {
     // The code that defines your stack goes here
     const uploadsBucketName: string = process.env.UPLOADS_BUCKET_NAME as string;
     const assetsBucketName: string = process.env.ASSETS_BUCKET_NAME as string;
-    const folderInput: string = process.env.THUMBING_S3_FOLDER_INPUT as string;
     const folderOutput: string = process.env.THUMBING_S3_FOLDER_OUTPUT as string;
     const webhookUrl: string = process.env.THUMBING_WEBHOOK_URL as string;
     const topicName: string = process.env.THUMBING_TOPIC_NAME as string;
     const functionPath: string = process.env.THUMBING_FUNCTION_PATH as string;
     console.log('uploadsBucketName',uploadsBucketName)
     console.log('assetsBucketName',assetsBucketName)
-    console.log('folderInput',folderInput)
     console.log('folderOutput',folderOutput)
     console.log('webhookUrl',webhookUrl)
     console.log('topicName',topicName)
@@ -36,10 +34,9 @@ export class ThumbingServerlessCdkStack extends cdk.Stack {
 
     // create a lambda
     const lambda = this.createLambda(
-      functionPath, 
+      functionPath,
       uploadsBucketName, 
       assetsBucketName, 
-      folderInput, 
       folderOutput
     );
 
@@ -48,7 +45,7 @@ export class ThumbingServerlessCdkStack extends cdk.Stack {
     this.createSnsSubscription(snsTopic,webhookUrl)
 
     // add our s3 event notifications
-    this.createS3NotifyToLambda(folderInput,lambda,uploadsBucket)
+    this.createS3NotifyToLambda(lambda,uploadsBucket)
     this.createS3NotifyToSns(folderOutput,snsTopic,assetsBucket)
 
     // create policies
@@ -75,14 +72,13 @@ export class ThumbingServerlessCdkStack extends cdk.Stack {
     return bucket;
   }
 
-  createLambda(functionPath: string, uploadsBucketName: string, assetsBucketName: string, folderInput: string, folderOutput: string): lambda.IFunction {
+  createLambda(functionPath: string, uploadsBucketName: string, assetsBucketName: string, folderOutput: string): lambda.IFunction {
     const lambdaFunction = new lambda.Function(this, 'ThumbLambda', {
       runtime: lambda.Runtime.NODEJS_18_X,
       handler: 'index.handler',
       code: lambda.Code.fromAsset(functionPath),
       environment: {
         DEST_BUCKET_NAME: assetsBucketName,
-        FOLDER_INPUT: folderInput,
         FOLDER_OUTPUT: folderOutput,
         PROCESS_WIDTH: '512',
         PROCESS_HEIGHT: '512'
@@ -91,7 +87,7 @@ export class ThumbingServerlessCdkStack extends cdk.Stack {
     return lambdaFunction;
   } 
 
-  createS3NotifyToLambda(prefix: string, lambda: lambda.IFunction, bucket: s3.IBucket): void {
+  createS3NotifyToLambda(lambda: lambda.IFunction, bucket: s3.IBucket): void {
     const destination = new s3n.LambdaDestination(lambda);
     bucket.addEventNotification(
       s3.EventType.OBJECT_CREATED_PUT,
@@ -137,6 +133,7 @@ export class ThumbingServerlessCdkStack extends cdk.Stack {
     );
   }
 
+  /*
   createPolicySnsPublish(topicArn: string){
     const snsPublishPolicy = new iam.PolicyStatement({
       actions: [
@@ -148,4 +145,5 @@ export class ThumbingServerlessCdkStack extends cdk.Stack {
     });
     return snsPublishPolicy;
   }
+  */
 }
