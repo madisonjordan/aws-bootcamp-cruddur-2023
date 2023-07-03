@@ -1,6 +1,6 @@
 import './ProfileHeading.css';
-import EditProfileButton from '../components/EditProfileButton';
-import ProfileAvatar from '../components/ProfileAvatar'
+import EditProfileButton from 'components/EditProfileButton';
+import ProfileAvatar from 'components/ProfileAvatar'
 
 export default function ProfileHeading(props) {
   const backgroundImage = 'url("https://assets.kapingkaping.cloud/banners/banner.jpg")';

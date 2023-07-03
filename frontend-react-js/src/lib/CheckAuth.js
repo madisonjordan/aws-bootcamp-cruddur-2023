@@ -12,6 +12,7 @@ export const checkAuth = async (setUser) => {
     return Auth.currentAuthenticatedUser()
   }).then((cognito_user) => {
       setUser({
+        cognito_user_uuid: cognito_user.attributes.sub,
         display_name: cognito_user.attributes.name,
         handle: cognito_user.attributes.preferred_username
       })

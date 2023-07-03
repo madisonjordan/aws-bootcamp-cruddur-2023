@@ -1,7 +1,7 @@
 import './ProfileForm.css';
 import React from "react";
 import process from 'process';
-import {getAccessToken} from '../lib/CheckAuth';
+import {getAccessToken} from 'lib/CheckAuth';
 
 export default function ProfileForm(props) {
   const [bio, setBio] = React.useState('');
