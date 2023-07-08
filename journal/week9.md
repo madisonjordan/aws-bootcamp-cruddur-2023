@@ -8,6 +8,9 @@
 > - [Required Homework](#required-homework)
 
 #### Weekly Outcome
+- Configuring and running a build server to bake container images and push to private repo
+- Configure deployment controller for server containers
+- Implement Continuous Deployment for backend and frontend applications
 
 
 ---
