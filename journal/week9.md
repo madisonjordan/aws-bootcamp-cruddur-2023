@@ -17,6 +17,7 @@
 
 #### Reflection
 <!--Thoughts/Feelings so far.-->
+I think I'm getting better and reading the logs and creating policies to have the proper permissions. Debugging the permission errors in the CodeBuild failures didn't take as long as it has for me in previous weeks.
 
 
 #### Challenges
@@ -36,3 +37,15 @@
 ---
 
 ## Required Homework  
+
+I added my AWS Account ID as a variable in parameter store. I had to add a policy to read from parameter store `ssm:GetParameters` as described in the [buildspec docs](https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html).
+
+As described in the [CodeBuild sample docker docs](https://docs.aws.amazon.com/codebuild/latest/userguide/sample-docker.html), the other policies I had to add were:
+```
+"ecr:BatchCheckLayerAvailability",
+"ecr:CompleteLayerUpload",
+"ecr:GetAuthorizationToken",
+"ecr:InitiateLayerUpload",
+"ecr:PutImage",
+"ecr:UploadLayerPart"
+```
