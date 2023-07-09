@@ -39,6 +39,8 @@ I think I'm getting better and reading the logs and creating policies to have th
 
 ## Required Homework  
 
+
+### Configure Build Action in CodeBuild
 I added my AWS Account ID as a variable in parameter store. I had to add a policy to read from parameter store `ssm:GetParameters` as described in the [buildspec docs](https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html).
 
 As described in the [CodeBuild sample docker docs](https://docs.aws.amazon.com/codebuild/latest/userguide/sample-docker.html), the other policies I had to add were:
@@ -50,3 +52,7 @@ As described in the [CodeBuild sample docker docs](https://docs.aws.amazon.com/c
 "ecr:PutImage",
 "ecr:UploadLayerPart"
 ```
+
+### Configure CodePipeline
+
+The build stage deployed twice so I had to remove the optional webhook from the CodeBuild project we configured in isolate. 
