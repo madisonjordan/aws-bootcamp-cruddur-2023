@@ -19,7 +19,7 @@ phases:
       - docker push ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${CONTAINER_NAME}:${CONTAINER_TAG}
       - cd $CODEBUILD_SRC_DIR
       - echo "imagedefinitions.json > [{\"name\":\"$CONTAINER_NAME\",\"imageUri\":\"${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${CONTAINER_NAME}:${CONTAINER_TAG}\"}]" > imagedefinitions.json
-      - printf "[{\"name\":\"$CONTAINER_NAME\",\"imageUri\":\"$IMAGE_URL/${CONTAINER_NAME}:${CONTAINER_TAG}\"}]" > imagedefinitions.json
+      - printf "[{\"name\":\"$CONTAINER_NAME\",\"imageUri\":\"${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${CONTAINER_NAME}:${CONTAINER_TAG}\"}]" > imagedefinitions.json
 
 env:
   variables:
