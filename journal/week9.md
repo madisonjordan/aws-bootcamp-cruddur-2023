@@ -1,7 +1,5 @@
 # Week 9 — CI/CD with CodePipeline, CodeBuild and CodeDeploy
 
-# Week 8 — Serverless Image Processing
-
 >__Quick Links__
 > - [Weekly Summary](#weekly-summary)
 > - [Key Takeaways](#key-takeaways)
