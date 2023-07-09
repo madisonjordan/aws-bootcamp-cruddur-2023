@@ -2,7 +2,7 @@ import os
 from time import strftime
 
 from flask import Flask
-from flask import request, g
+from flask import request, g, sessions
 from flask_cors import CORS, cross_origin
 
 from services.users_short import *
@@ -104,7 +104,8 @@ cors = CORS(
 
 # Rollbar ------
 with app.app_context():
-  g.rollbar = init_rollbar(app)
+  rollbar = init_rollbar(app)
+  sessions.rollbar = rollbar
 
 @app.route('/api/health-check')
 def health_check():
@@ -113,8 +114,8 @@ def health_check():
 # Rollbar -----
 @app.route('/rollbar/test')
 def rollbar_test():
-    g.rollbar.report_message('Hello World!', 'warning')
-    return "Hello World!"
+  sessions.rollbar.report_message('Hello World!', 'warning')
+  return "Hello World!"
 
 @app.route("/api/message_groups", methods=['GET'])
 def data_message_groups():
