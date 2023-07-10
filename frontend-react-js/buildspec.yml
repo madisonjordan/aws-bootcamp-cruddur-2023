@@ -11,13 +11,13 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...          
       - >
-        docker build -f Dockerfile.prod -t
+        docker build -f Dockerfile.prod
         --build-arg REACT_APP_BACKEND_URL="https://api.kapingkaping.cloud"
         --build-arg REACT_APP_AWS_PROJECT_REGION="$AWS_DEFAULT_REGION"
         --build-arg REACT_APP_AWS_COGNITO_REGION="$AWS_DEFAULT_REGION"
         --build-arg REACT_APP_AWS_USER_POOLS_ID="us-west-2_hplcZHuxf"
         --build-arg REACT_APP_CLIENT_ID="5481bg7v1pub3u36jmkhfur97s"
-        frontend-react-js:latest .
+        -t frontend-react-js:latest .
       - docker tag frontend-react-js:latest "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${CONTAINER_NAME}:${CONTAINER_TAG}"
   post_build:
     commands:
