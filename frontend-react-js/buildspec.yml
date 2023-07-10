@@ -1,0 +1,41 @@
+# Buildspec runs in the build stage of your pipeline.
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - echo "cd into $CODEBUILD_SRC_DIR/frontend"
+      - cd $CODEBUILD_SRC_DIR/frontend-react-js
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin "$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com"
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...          
+      - >
+        docker build -f Dockerfile.prod -t
+        --build-arg REACT_APP_BACKEND_URL="https://api.kapingkaping.cloud"
+        --build-arg REACT_APP_AWS_PROJECT_REGION="$AWS_DEFAULT_REGION"
+        --build-arg REACT_APP_AWS_COGNITO_REGION="$AWS_DEFAULT_REGION"
+        --build-arg REACT_APP_AWS_USER_POOLS_ID="us-west-2_hplcZHuxf"
+        --build-arg REACT_APP_CLIENT_ID="5481bg7v1pub3u36jmkhfur97s"
+        frontend-react-js:latest .
+      - docker tag frontend-react-js:latest "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${CONTAINER_NAME}:${CONTAINER_TAG}"
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image..
+      - docker push ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${CONTAINER_NAME}:${CONTAINER_TAG}
+      - cd $CODEBUILD_SRC_DIR
+      - echo "imagedefinitions.json > [{\"name\":\"$CONTAINER_NAME\",\"imageUri\":\"${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${CONTAINER_NAME}:${CONTAINER_TAG}\"}]" > imagedefinitions.json
+      - printf "[{\"name\":\"$CONTAINER_NAME\",\"imageUri\":\"${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${CONTAINER_NAME}:${CONTAINER_TAG}\"}]" > imagedefinitions.json
+
+env:
+  variables:
+    AWS_DEFAULT_REGION: us-west-2
+    CONTAINER_NAME: frontend-react-js
+    CONTAINER_TAG: latest
+  parameter-store:
+    AWS_ACCOUNT_ID: /cruddur/AWS_ACCOUNT_ID
+
+artifacts:
+  files:
+    - imagedefinitions.json
