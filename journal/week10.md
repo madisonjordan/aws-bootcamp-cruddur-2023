@@ -81,7 +81,7 @@ AttachIGW:
 
 #### Key Takeaways
 <!-- Key takeaways for this week -->
-
+- Check your Network ACLs have outbound routes if you're having issues
 
 #### Questions
 <!-- Questions on the materials or concepts with their answers, if available.-->
