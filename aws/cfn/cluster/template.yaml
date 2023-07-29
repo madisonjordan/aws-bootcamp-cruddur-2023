@@ -6,6 +6,7 @@ Description: |
   - Application Load Balanacer (ALB)
     - ipv4 only
     - internet facing
+    - certificate attached from Amazon Certification Manager (ACM)
   - ALB Security Group
   - HTTPS Listerner
     - send naked domain to frontend Target Group
