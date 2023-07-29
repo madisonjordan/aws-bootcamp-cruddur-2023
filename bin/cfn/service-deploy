@@ -1,8 +1,8 @@
 #! /usr/bin/env bash
 set -e # stop the execution of the script if it fails
 
-CFN_PATH="/workspace/aws-bootcamp-cruddur-2023/aws/cfn/cluster/template.yaml"
-CONFIG_PATH="/workspace/aws-bootcamp-cruddur-2023/aws/cfn/cluster/config.toml"
+CFN_PATH="/workspace/aws-bootcamp-cruddur-2023/aws/cfn/service/template.yaml"
+CONFIG_PATH="/workspace/aws-bootcamp-cruddur-2023/aws/cfn/service/config.toml"
 echo $CFN_PATH
 
 cfn-lint $CFN_PATH
@@ -14,15 +14,16 @@ PARAMETERS=$(cfn-toml params v2 -t $CONFIG_PATH)
 
 # If placeholder is used, replace with value from env variable `AWS_ACCOUNT_ID`
 if [[ "$PARAMETERS" =~ .*"AWS_ACCOUNT_ID".* ]]; then
+  PARAMETERS="${PARAMETERS//AWS_DEFAULT_REGION/${AWS_DEFAULT_REGION}}"
   PARAMETERS="${PARAMETERS//AWS_ACCOUNT_ID/${AWS_ACCOUNT_ID}}"
 fi
 
 aws cloudformation deploy \
-  --stack-name "CrdCluster" \
+  --stack-name $STACK_NAME \
   --s3-bucket $BUCKET \
   --region $REGION \
   --template-file "$CFN_PATH" \
   --no-execute-changeset \
-  --tags group=cruddur-cluster \
+  --tags group=cruddur-backend-flask \
   --parameter-overrides $PARAMETERS \
   --capabilities CAPABILITY_NAMED_IAM
