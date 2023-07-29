@@ -1,0 +1,14 @@
+[deploy]
+bucket = ''
+region = ''
+stack_name = ''
+
+[parameters]
+EcrImage = 'AWS_ACCOUNT_ID.dkr.ecr.AWS_DEFAULT_REGION.amazonaws.com/backend-flask'
+EnvAWSCognitoUserPoolId = ''
+EnvCognitoUserPoolClientId = ''
+SecretsAWSAccessKeyId = 'arn:aws:ssm:AWS_DEFAULT_REGION:AWS_ACCOUNT_ID:parameter/cruddur/backend-flask/AWS_ACCESS_KEY_ID'
+SecretsSecretAccessKey = 'arn:aws:ssm:AWS_DEFAULT_REGION:AWS_ACCOUNT_ID:parameter/cruddur/backend-flask/AWS_SECRET_ACCESS_KEY'
+SecretsConnectionUrl = 'arn:aws:ssm:AWS_DEFAULT_REGION:AWS_ACCOUNT_ID:parameter/cruddur/backend-flask/CONNECTION_URL'
+SecretsRollbarAccessToken = 'arn:aws:ssm:AWS_DEFAULT_REGION:AWS_ACCOUNT_ID:parameter/cruddur/backend-flask/ROLLBAR_ACCESS_TOKEN'
+SecretsOtelExporterOltpHeaders = 'arn:aws:ssm:AWS_DEFAULT_REGION:AWS_ACCOUNT_ID:parameter/cruddur/backend-flask/OTEL_EXPORTER_OTLP_HEADERS'
