@@ -91,3 +91,10 @@ AttachIGW:
 ## Required Homework  
 
 
+### Deploy CloudFormation 
+
+Delete previously manually configured:
+- ALB (under EC2)
+- Target Groups (under EC2)
+- ECS cluster 'cruddur' and its services
+- Cloud Map namespace 'cruddur'
