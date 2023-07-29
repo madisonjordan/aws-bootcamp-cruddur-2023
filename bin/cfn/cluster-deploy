@@ -18,7 +18,7 @@ if [[ "$PARAMETERS" =~ .*"AWS_ACCOUNT_ID".* ]]; then
 fi
 
 aws cloudformation deploy \
-  --stack-name "CrdCluster" \
+  --stack-name $STACK_NAME \
   --s3-bucket $BUCKET \
   --region $REGION \
   --template-file "$CFN_PATH" \
