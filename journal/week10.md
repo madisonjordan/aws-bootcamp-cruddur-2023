@@ -27,6 +27,7 @@ Week 11
 ---
 ## Knowledge Transfer
 
+### CloudFormation Syntax
 In CloudFormation templates:
 
 YAML compiles down to JSON so,
@@ -53,6 +54,8 @@ IGW:
   Properties: {VpcId: {Ref: "VPC"}}
 ```
 
+### Functions
+
 You can also use CloudFormation's various functions to reference previously defined resources using `Ref`, `GetAtt`, etc
 ```
 VPC: 
@@ -75,6 +78,35 @@ AttachIGW:
     InternetGatewayId: !Ref IGW
 ```
 
+### Converting Manually Deployed Services
+
+service-backend-flask.json
+```
+  "serviceConnectConfiguration": {
+    "enabled": true,
+    "namespace": "cruddur",
+    "services": [
+      {
+        "portName": "backend-flask",
+        "discoveryName": "backend-flask",
+        "clientAliases": [{"port": 4567}]
+      }
+    ]
+  }
+```
+
+```
+ServiceConnectConfiguration:
+  Enabled: true
+  Namespace: "cruddur"
+  # TODO - If you want to log
+  # LogConfiguration
+  Services:
+    - DiscoveryName: backend-flask
+      PortName: backend-flask
+      ClientAliases:
+        - Port: !Ref ContainerPort
+```
 
 
 

@@ -119,11 +119,21 @@ Resources:
                   !Sub "${NetworkingStack}PublicSubnetIds"
       PlatformVersion: LATEST
       PropagateTags: SERVICE
-      ServiceRegistries:
-        - RegistryArn: !Sub 'arn:aws:servicediscovery:${AWS::Region}:${AWS::AccountId}:service/srv-cruddur-backend-flask'
-          Port: !Ref ContainerPort
-          ContainerName: 'backend-flask'
-          ContainerPort: !Ref ContainerPort
+      ServiceConnectConfiguration:
+        Enabled: true
+        Namespace: "cruddur"
+        # TODO - If you want to log
+        # LogConfiguration
+        Services:
+          - DiscoveryName: backend-flask
+            PortName: backend-flask
+            ClientAliases:
+              - Port: !Ref ContainerPort
+      #ServiceRegistries:
+      #  - RegistryArn: !Sub 'arn:aws:servicediscovery:${AWS::Region}:${AWS::AccountId}:service/srv-cruddur-backend-flask'
+      #    Port: !Ref ContainerPort
+      #    ContainerName: 'backend-flask'
+      #    ContainerPort: !Ref ContainerPort
       ServiceName: !Ref ServiceName
       TaskDefinition: !Ref TaskDefinition
 
