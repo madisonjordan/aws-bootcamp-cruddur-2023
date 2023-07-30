@@ -102,8 +102,9 @@ Resources:
       HealthCheckGracePeriodSeconds: 0
       LaunchType: FARGATE
       LoadBalancers:
-      # TODO - UPDATE THIS
-        - TargetGroupArn: !Ref TargetGroupArnALB
+        - TargetGroupArn: 
+            Fn::ImportValue:
+              !Sub "${ClusterStack}BackendTGArn"
           ContainerName: 'backend-flask'
           ContainerPort: !Ref ContainerPort
       NetworkConfiguration:

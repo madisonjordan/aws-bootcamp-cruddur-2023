@@ -82,6 +82,8 @@ AttachIGW:
 #### Key Takeaways
 <!-- Key takeaways for this week -->
 - Check your Network ACLs have outbound routes if you're having issues
+- Update Behavior, Modification vs Replacement, in CloudFormation causes a lot of unexpected issues
+- Logical Names for resources have a length limit, so try to keep them short including when using `!Sub` to change them
 
 #### Questions
 <!-- Questions on the materials or concepts with their answers, if available.-->
@@ -101,4 +103,5 @@ Delete previously manually configured:
 - Cloud Map namespace 'cruddur'
 
 #### Service
+Delete previously manually configured:
 - IAM Role: CruddurServiceExecutionRole
