@@ -24,6 +24,8 @@ Week 11
 #### Challenges
 <!-- Challenges you've had this week in completing your tasks. How you might solve them or what you did to solve them. -->
 
+I had a lot of difficulty deleting the ALB and the ALB Security Group from CloudFormation due to the tight coupling of the cluster stack with the networking one's subnets. The network interfaces were in use. I had to wait for the deletion to finally fail then manually delete the ALB. After it was deleted I had to wait for the interfaces to go from "in use" to available. 
+
 ---
 ## Knowledge Transfer
 
@@ -77,7 +79,6 @@ AttachIGW:
     # Get ID of previously defined Resource "IGW" using CloudFormation function `!Ref`
     InternetGatewayId: !Ref IGW
 ```
-
 ### Converting Manually Deployed Services
 
 service-backend-flask.json
@@ -108,14 +109,12 @@ ServiceConnectConfiguration:
         - Port: !Ref ContainerPort
 ```
 
-
-
-
 #### Key Takeaways
 <!-- Key takeaways for this week -->
 - Check your Network ACLs have outbound routes if you're having issues
 - Update Behavior, Modification vs Replacement, in CloudFormation causes a lot of unexpected issues
 - Logical Names for resources have a length limit, so try to keep them short including when using `!Sub` to change them
+- Dependencies of resources such as networking security groups makes it difficult to reduce coupling in CloudFormation
 
 #### Questions
 <!-- Questions on the materials or concepts with their answers, if available.-->
@@ -134,6 +133,18 @@ Delete previously manually configured:
 - ECS cluster 'cruddur' and its services
 - Cloud Map namespace 'cruddur'
 
+#### RDS
+
+After Deployment:
+- update connection url var in parameter store
+
 #### Service
 Delete previously manually configured:
 - IAM Role: CruddurServiceExecutionRole
+
+Note: Health check fails if database is not on the same VPC
+
+Fixes:
+- HealthCheckPort in cluster template should be set to 4567, not 80. 
+
+Port for health check wasn't updating in target group after update to changeset, so I deleted all the stacks. 
