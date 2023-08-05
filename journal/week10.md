@@ -144,6 +144,9 @@ Delete previously manually configured:
 
 Note: Health check fails if database is not on the same VPC
 
+Configure:
+- add load balancer `dualstack.CrdClusterALB` to Route53 "A" records, `api.domain` and `domain`
+
 Fixes:
 - HealthCheckPort in cluster template should be set to 4567, not 80. 
 
