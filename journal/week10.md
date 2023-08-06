@@ -151,3 +151,22 @@ Fixes:
 - HealthCheckPort in cluster template should be set to 4567, not 80. 
 
 Port for health check wasn't updating in target group after update to changeset, so I deleted all the stacks. 
+
+### DynamoDB
+
+Delete previously manually configured:
+- log group: `/aws/lambda/cruddur-messaging-stream`
+
+```
+sam build \
+--use-container \
+--config-file $CONFIG_PATH \
+--template $TEMPLATE_PATH \
+--base-dir $LAMBDA_DIR
+```
+
+Note:
+- `--base-dir` is where the sam command is executed, so in the `template.yaml`, the `CodeUri` is a folder relative to this path
+- e.g.) for the folder `./aws/lambas/cruddur-messaging-stream` in the workspace:
+    - `--base-dir` `$ABS_PATH/aws/lambas/`
+    - `CodeUri: cruddur-messaging-stream`
