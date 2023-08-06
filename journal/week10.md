@@ -167,6 +167,6 @@ sam build \
 
 Note:
 - `--base-dir` is where the sam command is executed, so in the `template.yaml`, the `CodeUri` is a folder relative to this path
-- e.g.) for the folder `./aws/lambas/cruddur-messaging-stream` in the workspace:
-    - `--base-dir` `$ABS_PATH/aws/lambas/`
+- e.g.) for the folder `./aws/lambdas/cruddur-messaging-stream` in the workspace:
+    - `--base-dir` `$ABS_PATH/aws/lambdas/`
     - `CodeUri: cruddur-messaging-stream`
