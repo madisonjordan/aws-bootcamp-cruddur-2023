@@ -170,3 +170,8 @@ Note:
 - e.g.) for the folder `./aws/lambdas/cruddur-messaging-stream` in the workspace:
     - `--base-dir` `$ABS_PATH/aws/lambdas/`
     - `CodeUri: cruddur-messaging-stream`
+
+### CICD
+
+after deployment:
+- codepipeline > settings > "pending connection" > update connection

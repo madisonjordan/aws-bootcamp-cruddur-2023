@@ -1,0 +1,11 @@
+[deploy]
+bucket = 'cfn-artifacts-kapingkaping'
+region = 'us-west-2'
+stack_name = 'CrdCicd'
+
+[parameters]
+ServiceStack = 'CrdSrvBackendFlask'
+ClusterStack = 'CrdCluster'
+GitHubBranch = 'prod'
+GithubRepo = 'aws-bootcamp-cruddur-2023'
+ArtifactBucketName = "codepipeline-cruddur-artifacts-kapingkaping"
