@@ -175,3 +175,8 @@ Note:
 
 after deployment:
 - codepipeline > settings > "pending connection" > update connection
+
+### Frontend
+
+Delete previously manually configured:
+- Route 53 > Hosted Zone > delete `A` Record for `kapingkaping.cloud`

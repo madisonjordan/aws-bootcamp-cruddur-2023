@@ -1,0 +1,9 @@
+[deploy]
+bucket = 'cfn-artifacts-kapingkaping'
+region = 'us-west-2'
+stack_name = 'CrdFrontend'
+
+[parameters]
+CertificateArn = 'arn:aws:acm:us-east-1:AWS_ACCOUNT_ID:certificate/483ae706-be2a-493b-960d-5eddc55a9e93'
+WwwBucketName = 'www.kapingkaping.cloud'
+RootBucketName = 'kapingkaping.cloud'
