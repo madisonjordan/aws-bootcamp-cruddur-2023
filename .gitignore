@@ -1,6 +1,6 @@
-db
-!bin/db
-!aws/cfn/db
+db/
+!bin/db/
+!aws/cfn/db/
 frontend-react-js/build
 *.env
 node_modules
