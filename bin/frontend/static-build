@@ -1,0 +1,20 @@
+#! /usr/bin/bash
+
+BIN_DIR=$(dirname $(dirname $0))
+PROJECT_ROOT=$(dirname $BIN_DIR)
+
+pushd "$PROJECT_ROOT/frontend-react-js" > /dev/null
+
+if [ ! -d "/node_modules" ]; then
+  echo "running npm install..."
+  npm install
+fi
+
+REACT_APP_BACKEND_URL="https://api.kapingkaping.cloud" \
+REACT_APP_AWS_PROJECT_REGION="$AWS_DEFAULT_REGION" \
+REACT_APP_AWS_COGNITO_REGION="$AWS_DEFAULT_REGION" \
+REACT_APP_AWS_USER_POOLS_ID="us-west-2_hplcZHuxf" \
+REACT_APP_CLIENT_ID="5481bg7v1pub3u36jmkhfur97s" \
+npm run build
+
+popd > /dev/null
