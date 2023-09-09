@@ -180,3 +180,8 @@ after deployment:
 
 Delete previously manually configured:
 - Route 53 > Hosted Zone > delete `A` Record for `kapingkaping.cloud`
+
+After deployment:
+- build static site
+- upload `build/` contents into `kapingkaping.cloud` S3 bucket
+  - make sure the `static/` sub-directory is uploaded in addition to the files
