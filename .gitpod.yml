@@ -1,13 +1,13 @@
 tasks:
   - name: aws-sam
-    init: |
+    init: >
       cd /workspace
-      wget https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
-      unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
-      sudo ./sam-installation/install
-      cd $THEIA_WORKSPACE_ROOT
+      && wget https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
+      && unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
+      && sudo ./sam-installation/install
+      && exit
   - name: cfn
-    before: |
+    before: >
       bundle install
       && pip install cfn-lint
       && cargo install cfn-guard
@@ -16,45 +16,45 @@ tasks:
   - name: aws-cli
     env:
       AWS_CLI_AUTO_PROMPT: on-partial
-    before: |
+    before: >
       cd /workspace
-      curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      && curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
       && unzip awscliv2.zip
       && sudo ./aws/install
       && cd $THEIA_WORKSPACE_ROOT
       && bash bin/ecr/login
       && exit
   - name: cdk
-    before: |
+    before: >
       npm install aws-cdk -g
-      cd thumbing-serverless-cdk
-      npm install
+      && cd thumbing-serverless-cdk
+      && npm install
       && exit
   - name: postgres
-    before: |
+    before: >
       curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc|sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/postgresql.gpg
-      echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |sudo tee  /etc/apt/sources.list.d/pgdg.list
-      sudo apt update
-      sudo apt install -y postgresql-client-13 libpq-dev
+      && echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |sudo tee  /etc/apt/sources.list.d/pgdg.list
+      && sudo apt update
+      && sudo apt install -y postgresql-client-13 libpq-dev
       && exit
-    command: |
+    command: >
       export GITPOD_IP=$(curl ifconfig.me)
-      source "$THEIA_WORKSPACE_ROOT/bin/rds/update-sg-rule"
+      && source "$THEIA_WORKSPACE_ROOT/bin/rds/update-sg-rule"
       && exit
   - name: fargate
-    before: |
+    before: >
       cd /workspace
-      curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb" -o "session-manager-plugin.deb"
+      && curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb" -o "session-manager-plugin.deb"
       && sudo dpkg -i session-manager-plugin.deb 
       && exit
   - name: generate envs
-    command: |
+    command: >
       "$THEIA_WORKSPACE_ROOT/bin/env/generate-env" 
       && exit
   - name: flask
-    command: |
+    command: >
       cd backend-flask
-      pip install -r requirements.txt
+      && pip install -r requirements.txt
       && exit
 vscode:
   extensions:
