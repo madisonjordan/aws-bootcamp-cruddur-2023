@@ -4,6 +4,8 @@ region = 'us-west-2'
 stack_name = 'CrdSrvBackendFlask'
 
 [parameters]
+EnvFrontendUrl = 'https://kapingkaping.cloud'
+EnvBackendUrl = 'https://api.kapingkaping.cloud'
 EcrImage = 'AWS_ACCOUNT_ID.dkr.ecr.AWS_DEFAULT_REGION.amazonaws.com/backend-flask'
 EnvAWSCognitoUserPoolId = 'us-west-2_hplcZHuxf'
 EnvCognitoUserPoolClientId = '5481bg7v1pub3u36jmkhfur97s'
