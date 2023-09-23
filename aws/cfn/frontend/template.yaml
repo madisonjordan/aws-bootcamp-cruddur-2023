@@ -99,3 +99,10 @@ Resources:
           - ErrorCode: 403
             ResponseCode: 200
             ResponsePagePath: /index.html
+
+Outputs:
+  Distribution:
+    Description: "Distribution ID"
+    Value: !Ref Distribution
+    Export:
+      Name: !Sub "${AWS::StackName}-Distribution"
