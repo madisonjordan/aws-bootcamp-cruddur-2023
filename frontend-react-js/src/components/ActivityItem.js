@@ -12,7 +12,7 @@ export default function ActivityItem(props) {
   if (props.activity.replies) {
     replies = <div className="replies">
                 {props.activity.replies.map(reply => {
-                rßeturn  <ActivityItem 
+                return  <ActivityItem 
                   setReplyActivity={props.setReplyActivity} 
                   setPopped={props.setPopped} 
                   key={reply.uuid} 
