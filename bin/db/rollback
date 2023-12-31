@@ -27,29 +27,31 @@ def set_last_successful_run(value):
   WHERE id = 1
   """
   db.query_commit(sql,{'last_successful_run': value})
-  return value
-
-last_successful_run = get_last_successful_run()
+  return int(value)
 
 migrations_path = os.path.abspath(os.path.join(current_path, '..', '..','backend-flask','migrations'))
 sys.path.append(migrations_path)
-migration_files = glob.glob(f"{migrations_path}/*")
-
+migration_files = glob.glob(f"{migrations_path}/*.py")
 
 last_migration_file = None
+
 for migration_file in migration_files:
-  if last_migration_file == None:
-    filename = os.path.basename(migration_file)
-    module_name = os.path.splitext(filename)[0]
-    match = re.match(r'^\d+', filename)
-    if match:
-      file_time = int(match.group())
-      print("==<><>")
-      print(last_successful_run, file_time)
-      print(last_successful_run > file_time)
-      if last_successful_run > file_time:
-        last_migration_file = module_name
-        mod = importlib.import_module(module_name)
-        print('=== rolling back: ',module_name)
-        mod.migration.rollback()
-        set_last_successful_run(str(file_time))
+  filename = os.path.basename(migration_file)
+  module_name = os.path.splitext(filename)[0]
+  match = re.match(r'^\d+', filename)
+  if match:
+    file_time = int(match.group())
+    format_file_time= time.strftime('%Y-%m-%d %I:%M:%S %p', time.gmtime(file_time/1000000000))
+    last_successful_run = get_last_successful_run()
+    format_last_successful_run = time.strftime('%Y-%m-%d %I:%M:%S %p', time.gmtime(last_successful_run/1000000000))
+    print("==<><>")
+    print("name: ", module_name)
+    print("last: ", format_last_successful_run)
+    print("creation: ", format_file_time)
+    print("migrated: ", last_successful_run > file_time)
+    if last_successful_run > file_time:
+      last_migration_file = module_name
+      mod = importlib.import_module(module_name)
+      print('=== rolling back: ',module_name)
+      mod.migration.rollback()
+      set_last_successful_run(str(file_time))
