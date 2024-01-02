@@ -17,7 +17,7 @@ class CreateReply:
     if message == None or len(message) < 1:
       model['errors'] = ['message_blank'] 
     elif len(message) > 1024:
-      model['errors'] = ['message_exceed_max_chars'] 
+      model['errors'] = ['message_exceed_max_chars_1024'] 
 
     if model['errors']:
       # return what we provided
@@ -40,7 +40,6 @@ class CreateReply:
       'message': message,
     })
     return uuid
-
   def query_object_activity(uuid):
     sql = db.template('activities','object')
     return db.query_object_json(sql,{

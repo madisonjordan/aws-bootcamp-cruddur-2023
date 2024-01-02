@@ -1,12 +1,15 @@
 import './ReplyForm.css';
 import React from "react";
 import process from 'process';
-import {getAccessToken} from '../lib/CheckAuth';
-import ActivityContent  from '../components/ActivityContent';
+import {getAccessToken} from 'lib/CheckAuth';
+
+import ActivityContent  from 'components/ActivityContent';
+import FormErrors from 'components/FormErrors';
 
 export default function ReplyForm(props) {
   const [count, setCount] = React.useState(0);
   const [message, setMessage] = React.useState('');
+  const [errors, setErrors] = React.useState([]);
 
   const classes = []
   classes.push('count')
@@ -15,8 +18,8 @@ export default function ReplyForm(props) {
   }
 
   const onsubmit = async (event) => {
-    console.log('replyActivity',props.activity)
     event.preventDefault();
+    let res;
     try {
       const backend_url = `${process.env.REACT_APP_BACKEND_URL}/api/activities/${props.activity.uuid}/reply`
       await getAccessToken()
@@ -25,6 +28,7 @@ export default function ReplyForm(props) {
         method: "POST",
         headers: {
           'Authorization': `Bearer ${access_token}`,
+          'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -40,7 +44,6 @@ export default function ReplyForm(props) {
         let found_activity = activities_deep_copy.find(function (element) {
           return element.uuid ===  props.activity.uuid;
         });
-        console.log('found_activity',found_activity)
         found_activity.replies.push(data)
 
         props.setActivities(activities_deep_copy);
@@ -49,10 +52,12 @@ export default function ReplyForm(props) {
         setMessage('')
         props.setPopped(false)
       } else {
-        console.log(res)
+        setErrors(data)
+        console.log(res, data)
       }
     } catch (err) {
       console.log(err);
+      setErrors([`generic_${res.status}`]);
     }
   }
 
@@ -76,6 +81,9 @@ export default function ReplyForm(props) {
       <div className="popup_form_wrap reply_popup" onClick={close}>
         <div className="popup_form">
           <div className="popup_heading">
+            <div className="popup_title">
+            Reply to...
+            </div>
           </div>
           <div className="popup_content">
             <div className="activity_wrap">
@@ -95,6 +103,7 @@ export default function ReplyForm(props) {
                 <div className={classes.join(' ')}>{240-count}</div>
                 <button type='submit'>Reply</button>
               </div>
+              <FormErrors errors={errors}/>
             </form>
           </div>
         </div>
