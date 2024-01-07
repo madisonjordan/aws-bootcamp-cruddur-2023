@@ -8,6 +8,7 @@ import FormErrors from 'components/FormErrors';
 export default function ActivityForm(props) {
   const [count, setCount] = React.useState(0);
   const [message, setMessage] = React.useState('');
+  const [errors, setErrors] = React.useState([]);
   const params = useParams();
 
   const classes = []
@@ -18,15 +19,14 @@ export default function ActivityForm(props) {
 
   const onsubmit = async (event) => {
     event.preventDefault();
-    setErrors('');
-    const url = `${process.env.REACT_APP_BACKEND_URL}/api/messages`;
+    const url = `${process.env.REACT_APP_BACKEND_URL}/api/messages`
     let payload_data = { 'message': message }
     if (params.handle) {
       payload_data.handle = params.handle
     } else {
       payload_data.message_group_uuid = params.message_group_uuid
     }
-    post(url, payload_data, function(data){
+    post(url,payload_data,setErrors,function(data){
       console.log('data:',data)
       if (data.message_group_uuid) {
         console.log('redirect to message group')
@@ -57,7 +57,7 @@ export default function ActivityForm(props) {
         <div className={classes.join(' ')}>{1024-count}</div>
         <button type='submit'>Message</button>
       </div>
-      <FormErrors errors={errors}/>
+      <FormErrors errors={errors} />
     </form>
   );
 }

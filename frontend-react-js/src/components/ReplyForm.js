@@ -19,20 +19,19 @@ export default function ReplyForm(props) {
 
   const onsubmit = async (event) => {
     event.preventDefault();
-    setErrors('');
-    const url = `${process.env.REACT_APP_BACKEND_URL}/api/activities`;
+    const url = `${process.env.REACT_APP_BACKEND_URL}/api/activities/${props.activity.uuid}/reply`
     const payload_data = {
       activity_uuid: props.activity.uuid,
       message: message
     };
-    post(url, payload_data, function(data){
+    post(url, payload_data, setErrors,function(data){
       // add activity to the feed
-      let activities_deep_copy = JSON.parse(JSON.stringify(props.activities))
-      let found_activity = activities_deep_copy.find(function (element) {
-          return element.uuid ===  props.activity.uuid;
-        });
-        found_activity.replies.push(data)
-        props.setActivities(activities_deep_copy);
+      // let activities_deep_copy = JSON.parse(JSON.stringify(props.activities))
+      // let found_activity = activities_deep_copy.find(function (element) {
+      //     return element.uuid ===  props.activity.uuid;
+      //   });
+      //   found_activity.replies.push(data)
+      //   props.setActivities(activities_deep_copy);
         // reset and close the form
         setCount(0)
         setMessage('')

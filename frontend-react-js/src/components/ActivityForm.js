@@ -19,13 +19,12 @@ export default function ActivityForm(props) {
 
   const onsubmit = async (event) => {
     event.preventDefault();
-    setErrors('');
-    const url = `${process.env.REACT_APP_BACKEND_URL}/api/activities`;
+    const url = `${process.env.REACT_APP_BACKEND_URL}/api/activities`
     const payload_data = {
       message: message,
       ttl: ttl
     }
-    post(url, payload_data, function (){
+    post(url,payload_data,setErrors,function(data){
       // add activity to the feed
       props.setActivities(current => [data,...current]);
       // reset and close the form
@@ -75,7 +74,7 @@ export default function ActivityForm(props) {
               <option value='1-hour'>1 hour </option>
             </select>
           </div>
-          <FormErrors errors={errors}/>
+          <FormErrors errors={errors} />
         </div>
       </form>
     );

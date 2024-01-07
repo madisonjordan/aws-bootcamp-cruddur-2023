@@ -21,27 +21,13 @@ export default function UserFeedPage() {
   const params = useParams();
 
   const loadData = async () => {
-    try {
-      const backend_url = `${process.env.REACT_APP_BACKEND_URL}/api/activities/@${params.handle}`
-      await getAccessToken()
-      const access_token = localStorage.getItem("access_token")
-      const res = await fetch(backend_url, {
-        headers: {
-          Authorization: `Bearer ${access_token}`
-        },
-        method: "GET"
-      });
-      let resJson = await res.json();
-      if (res.status === 200) {
-        console.log('setprofile',resJson.profile)
-        setProfile(resJson.profile)
-        setActivities(resJson.activities)
-      } else {
-        console.log(res)
-      }
-    } catch (err) {
-      console.log(err);
-    }
+    const url = `${process.env.REACT_APP_BACKEND_URL}/api/activities/@${params.handle}`
+    get(url, null, function(data){
+      console.log('setprofile',data.profile)
+      setProfile(data.profile)
+      setActivities(data.activities)
+    })
+    
   };
 
   React.useEffect(()=>{
@@ -57,7 +43,7 @@ export default function UserFeedPage() {
     <article>
       <DesktopNavigation user={user} active={'profile'} setPopped={setPopped} />
       <div className='content'>
-        <ActivityForm popped={popped} setActivities={setActivities} />
+      <ActivityForm popped={popped} setActivities={setActivities} />
         <ProfileForm 
           profile={profile}
           popped={poppedProfile} 
