@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+
+cd thumbing-serverless-cdk \
+&& npm install

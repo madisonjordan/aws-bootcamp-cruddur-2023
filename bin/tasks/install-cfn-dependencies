@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+
+bundle install \
+&& pip install cfn-lint \
+&& cargo install cfn-guard \
+&& gem install cfn-toml

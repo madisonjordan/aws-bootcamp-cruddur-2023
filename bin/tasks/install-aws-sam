@@ -1,0 +1,14 @@
+#!/bin/bash
+set -e
+
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+    cd ~/Downloads
+    curl "https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-macos-x86_64.pkg" -o "aws-sam-cli-macos-x86_64.pkg"
+    sudo installer -pkg aws-sam-cli-macos-x86_64.pkg -target /
+fi
+
+if [[ "$OSTYPE" =~ ^linux ]]; then
+    wget https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip \
+    && unzip aws-sam-cli-linux-x86_64.zip -d sam-installation \
+    && sudo ./sam-installation/install
+fi
