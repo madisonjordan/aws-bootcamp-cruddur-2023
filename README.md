@@ -2,7 +2,6 @@
 
 ![](https://codebuild.us-west-2.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiUjB2d3BMVnBDQytLekxPNDIzamcwMU9DdGt2bDdNaGtHZk1vVVpWVkhhODZtU0JGbmtPWjNBb0QwejdKMllEWnFIeFlHM1hNU3VHbW4yWkpiUWtGa05jPSIsIml2UGFyYW1ldGVyU3BlYyI6Im9LMU05NFZJUVhtVXlmR3EiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main)
 
-![](https://codebuild.us-west-2.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiR2F3aGEybXpSdk5NUmdrL0JUYlV3VFJBWUVzenB5NkNxaGRRUkE3V1Q0VC9uSVhQakxFdDZxWmZKeVRkRk9tY3o5MHV4elZiblNSSjZOY1NVUWRXeGlNPSIsIml2UGFyYW1ldGVyU3BlYyI6IkVJbXVPdllnQmNrckYxdHEiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main)
 
 - Application: Cruddur
 - Cohort: 2023-A1
@@ -28,7 +27,7 @@ The `/journal` directory contains
 - [ ] [Week 9](journal/week9.md)
 - [ ] [Week 10](journal/week10.md)
 - [ ] [Week 11](journal/week11.md)
-- [ ] [Week S](journal/weekX.md)
+- [ ] [Week X](journal/weekX.md)
 
 ## Instructions
 
