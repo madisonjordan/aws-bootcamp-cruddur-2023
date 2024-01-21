@@ -36,8 +36,9 @@ The `/journal` directory contains
 
 The local environment uses a local Postgres container for users and their activities.
 
-1. Set env variables in `docker-compose.yaml`:
+1. Set env variables in `backend-flask[.erb,.env] and frontend-react-js[.erb,.env]`:
    - update `CONNECTION_URL` in the backend-flask scope to use your local postgres container url
+   - update `AWS_ENDPOINT_URL` in the backend-flask scope to use `http://host.docker.internal:8000/` if you are running on a local machine outside of gitpod
 2. Run `docker-compose.yaml` from the project root
 3. Run the Postgres database `setup` script to create the database, tables, seed users and activities, and update seeded users' UUIDs from Cognito
 4. Run the DynamoDB schema-load and seed scripts to created seed conversations between the seeded users
