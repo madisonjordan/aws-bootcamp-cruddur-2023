@@ -15,7 +15,8 @@ end
 
 generate_env("sync")
 
-env_path = "/workspace/aws-bootcamp-cruddur-2023/sync.env"
+workspace = File.expand_path("../../", __dir__)
+env_path = File.join(workspace, "sync.env")
 Dotenv.load(env_path)
 
 puts "== configuration"
