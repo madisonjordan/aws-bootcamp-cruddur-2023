@@ -11,4 +11,3 @@ end
 
 generate_env("backend-flask")
 generate_env("frontend-react-js")
-generate_env("sync")

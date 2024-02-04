@@ -1,9 +1,11 @@
 #! /usr/bin/env bash
 #set -e # stop the execution of the script if it fails
 
-CFN_PATH="/workspace/aws-bootcamp-cruddur-2023/aws/cfn/cicd/template.yaml"
-CONFIG_PATH="/workspace/aws-bootcamp-cruddur-2023/aws/cfn/cicd/config.toml"
-PACKAGED_PATH="/workspace/aws-bootcamp-cruddur-2023/tmp/packaged-template.yaml"
+BIN_DIR=$(dirname $(dirname $(realpath $0)))
+WORKSPACE=$(dirname $BIN_DIR)
+CFN_PATH="$WORKSPACE/aws/cfn/cicd/template.yaml"
+CONFIG_PATH="$WORKSPACE/aws/cfn/cicd/config.toml"
+PACKAGED_PATH="$WORKSPACE/tmp/packaged-template.yaml"
 PARAMETERS=$(cfn-toml params v2 -t $CONFIG_PATH)
 echo $CFN_PATH
 
@@ -13,7 +15,7 @@ BUCKET=$(cfn-toml key deploy.bucket -t $CONFIG_PATH)
 REGION=$(cfn-toml key deploy.region -t $CONFIG_PATH)
 STACK_NAME=$(cfn-toml key deploy.stack_name -t $CONFIG_PATH)
 
-mkdir -p /workspace/aws-bootcamp-cruddur-2023/tmp
+mkdir -p $WORKSPACE/tmp
 
 # package
 # -----------------
